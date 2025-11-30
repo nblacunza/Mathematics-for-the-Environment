@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 - Solving nonlinear equations</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definición de la fuente Inter y estilos académicos */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Fondo gris claro */
+        }
+        /* Estilo para los bloques de código */
+        .code-block {
+            background-color: #1f2937; /* Gris oscuro para el código */
+            color: #d1d5db;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: monospace;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+        /* Color de acento tipo Springer Yellow */
+        .springer-yellow {
+            background-color: #FFC300;
+        }
+        .text-springer-yellow {
+            color: #FFC300;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA y NAVEGACIÓN (Fija) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Título del Libro -->
+            <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
+            </a>
+            <!-- Navegación de Capítulos (Ajustar según el número de capítulos) -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 p-2 rounded-lg transition duration-150">Inicio</a>
+                <a href="chapter1.html" class="text-gray-600 hover:text-gray-900 p-2 rounded-lg transition duration-150">Cap. 1</a>
+                <a href="chapter2.html" class="text-gray-600 hover:text-gray-900 p-2 rounded-lg transition duration-150">Cap. 2</a>
+                <a href="chapter3.html" class="text-gray-600 hover:text-gray-900 p-2 rounded-lg transition duration-150">Cap. 3</a>
+                <!-- Agrega más capítulos aquí -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DEL CAPÍTULO (PLANTILLA) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- Banner del Capítulo -->
+        <div class="springer-yellow p-6 rounded-xl shadow-lg mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">
+               Chapter 1: Solving nonlinear equations
+            </h1>
+            <p class="text-gray-700 mt-2">
+                Digital resources and complementary exercises
+            </p>
+        </div>
+
+        <!-- SECCIÓN 1: Ejercicios Numéricos -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">1. Numerical problems</h2>
+            <div id="ejercicios">
+                <h3 class="text-xl font-medium mt-4 text-springer-yellow"> (i) Global temperature from Earth radiation balance</h3>
+                <p class="text-gray-600 mt-2">
+Application of the secant, Picard and Newthon methods               </p>
+                <button class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-150">
+                    Download formulation (.pdf)
+                </button>
+                <button class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-150">
+                    Download solution (.pdf)
+                </button>
+            </div>
+            <div id="ejercicios">
+                <h3 class="text-xl font-medium mt-4 text-springer-yellow"> (ii) Anthropogenic effect on Earth's radiation balance</h3>
+                <p class="text-gray-600 mt-2">
+Brief description to be pasted here or write down the full exercise             </p>
+                <button class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-150">
+                    Download formulation (.pdf)
+                </button>
+                <button class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-150">
+                    Download solution (.pdf)
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Código y Archivos -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">2. Coding in Julia</h2>
+            <div id="codigo">
+                <p class="mb-4 text-gray-600">
+                    A glimpse of the secant method
+                </p>
+                <!-- Bloque de Código de Ejemplo -->
+                <pre class="code-block">
+# Julia Code Snippet for Exercise I
+
+function secant_method(f, x0, x1; tol=1e-8, max_iter=100)
+    # f: function, x0/x1: initial guesses
+    
+    for _ in 1:max_iter
+        fx0, fx1 = f(x0), f(x1)
+        x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0)
+
+        if abs(x2 - x1) < tol
+            return x2
+        end
+
+        x0, x1 = x1, x2
+    end
+
+    error("Secant method did not converge")
+end
+                </pre>
+                <a href="#" class="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium">Download the full code from GitHub</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Figuras y Visualizaciones -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">3. Illustrations of the methodologies</h2>
+            <div id="figuras" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Columna de Figura -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <h3 class="text-xl font-medium mb-2">Figure 1: Picard Iteration at work</h3>
+                    <!-- Placeholder para la figura (cambiar por URL real) -->
+                    <img src="https://placehold.co/600x400/FFC300/000000?text=Figure+1:+secant method" 
+                         alt="Placeholder para figura del modelo" 
+                         class="w-full h-auto rounded-lg shadow-md border-2 border-springer-yellow">
+                    <p class="text-sm text-gray-500 mt-2">
+                        Here comes the caption
+                    </p>
+                </div>
+                <!-- Columna de Video -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
+                    <h3 class="text-xl font-medium mb-2">Animation of the secant method </h3>
+                    <!-- Placeholder de Video (incrustar YouTube/Vimeo o usar un placeholder) -->
+                    <div class="aspect-w-16 aspect-h-9 w-full bg-gray-300 flex items-center justify-center rounded-lg">
+                        <p class="text-gray-700">
+                            <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Video"
+                                 alt="Placeholder para video de animación"
+                                 class="w-full h-auto rounded-lg">
+                        </p>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Animation of the secant method
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="springer-yellow mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-800">
+            <p>&copy; 2025 Mathematics for the Environment | Published by Springer</p>
+            <p class="text-sm mt-1"> Further resources in GitHub Pages </p>
+        </div>
+    </footer>
+</body>
+</html>
