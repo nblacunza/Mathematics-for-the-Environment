@@ -10,20 +10,23 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
-        .code-block { background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 0.5rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; overflow-x: auto; }
-        .method-card:hover { border-color: #FFC300; transform: translateY(-2px); }
+        .code-block { background-color: #1e1e1e; color: #d4d4d4; padding: 1.5rem; border-radius: 1rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; overflow-x: auto; border: 1px solid #333; }
+        .method-card:hover { border-color: #FFC300; transform: translateY(-4px); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
                 Mathematics for the <span class="text-springer-yellow">Environment</span>
             </a>
-            <nav class="space-x-6">
-                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition">Table of Contents</a>
-                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition">Home</a>
+            <nav class="flex items-center space-x-6">
+                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Julia Code
+                </a>
+                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest font-black">Chapters</a>
+                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
             </nav>
         </div>
     </header>
@@ -31,118 +34,150 @@
     <main class="max-w-6xl mx-auto px-6 py-12 flex-grow">
         
         <section class="mb-16">
-            <div class="mb-8">
-                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Introduction</span>
-                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 uppercase tracking-tighter leading-none">Numerical Methods Approach</h1>
+            <div class="mb-8 text-left">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Digital Resources</span>
+                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 uppercase tracking-tighter leading-none">Solving Nonlinear Equations</h1>
                 <div class="h-1.5 w-32 springer-yellow mb-8"></div>
-                <p class="text-lg text-gray-700 leading-relaxed max-w-4xl">
-                    As highlighted in the book, "numerical analysis is the study of algorithms that use numerical approximation for the problems of mathematical analysis." In environmental sciences, where models are often too complex for analytical solutions, these methods become the primary tool to understand climate stability and ecological shifts.
+                <p class="text-xl text-gray-700 leading-relaxed max-w-4xl">
+                    Numerical analysis is the study of algorithms that use numerical approximation for the problems of mathematical analysis. This chapter focuses on finding roots of equations where an exact algebraic solution is impossible—a fundamental challenge when modeling the Earth's energy balance.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 italic text-gray-600 leading-relaxed">
-                    "Philosophy is written in this grand book... it is written in the language of mathematics." This chapter translates that philosophy into iterative processes, moving from the simple dichotomy of the real line to the complexity of multidimensional environmental equilibria.
+            <div class="my-10 p-6 bg-white rounded-3xl border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-4">
+                    <div class="flex space-x-1">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">
+                        "The characters of the universe are written in the language of mathematics." Explore how we translate these characters into <strong>Julia</strong> code.
+                    </p>
                 </div>
-                <div class="aspect-video bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 group hover:border-springer-yellow transition-all">
-                    <span class="text-gray-400 font-bold group-hover:text-springer-yellow">[Illustrative Video / Energy Balance Animation]</span>
+                <a href="julia.html" class="bg-gray-900 text-white text-xs font-black px-6 py-3 rounded-full uppercase tracking-widest hover:bg-gray-700 transition">
+                    Why Julia?
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900">Numerical Methods Approach</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        In environmental sciences, we often deal with "equilibria"—states where the net energy change is zero. Mathematically, this means solving $f(x) = 0$. We start with simple interval-halving and move towards high-speed iterative shoots.
+                    </p>
+                    <div class="bg-yellow-50 p-6 rounded-2xl border-l-4 border-springer-yellow">
+                        <p class="text-sm text-gray-700 italic">
+                            <strong>Didactic Note:</strong> Every algorithm presented here balances three key factors: robustness (will it find the root?), speed (how many steps?), and requirements (do we need the derivative?).
+                        </p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 group hover:border-springer-yellow transition-all overflow-hidden relative">
+                    <span class="text-gray-400 font-bold group-hover:text-springer-yellow text-center px-6">
+                        [Placeholder: Interactive Animation of Newton-Raphson Convergence]
+                    </span>
                 </div>
             </div>
         </section>
 
         <section class="mb-20">
-            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-10">Iterative Methods for Scalar Equations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-10 border-b pb-4">Iterative Methods</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <div class="method-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-gray-900">Dichotomy Method</h3>
-                    <p class="text-sm text-gray-500 mt-3 flex-grow leading-relaxed">
-                        The most robust but slowest approach. Based on the Intermediate Value Theorem, it systematically halves an interval until the root is trapped.
+                <div class="method-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900">Dichotomy</h3>
+                    <p class="text-sm text-gray-500 mt-4 flex-grow leading-relaxed">
+                        Based on the Intermediate Value Theorem. It's the most reliable method: if the function changes sign, you <strong>will</strong> find the root.
                     </p>
-                    <div class="mt-4 mb-4 h-24 bg-gray-50 rounded-lg border flex items-center justify-center text-[10px] text-gray-400 uppercase font-black">
-                        [Dichotomy Convergence Plot]
+                    <div class="my-6 h-32 bg-gray-50 rounded-xl border flex items-center justify-center text-[10px] text-gray-400 font-black uppercase">
+                        [Graphic: Interval Bisection]
                     </div>
-                    <a href="dichotomy.html" class="text-xs font-black text-blue-600 uppercase hover:underline">Visual Details ↗</a>
+                    <a href="dichotomy.html" class="text-xs font-black text-blue-600 uppercase hover:underline inline-flex items-center">
+                        Explore Method <span class="ml-1">→</span>
+                    </a>
                 </div>
 
-                <div class="method-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col h-full">
+                <div class="method-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900">Secant Method</h3>
-                    <p class="text-sm text-gray-500 mt-3 flex-grow leading-relaxed">
-                        An approximation of Newton's method that doesn't require derivatives. It uses two previous points to estimate the next, balancing speed and simplicity.
+                    <p class="text-sm text-gray-500 mt-4 flex-grow leading-relaxed">
+                        An approximation that uses two points to draw a line. Faster than dichotomy and doesn't require calculating derivatives analytically.
                     </p>
-                    <div class="mt-4 mb-4 h-24 bg-gray-50 rounded-lg border flex items-center justify-center text-[10px] text-gray-400 uppercase font-black">
-                        [Secant Approximation Figure]
+                    <div class="my-6 h-32 bg-gray-50 rounded-xl border flex items-center justify-center text-[10px] text-gray-400 font-black uppercase">
+                        [Graphic: Secant Line Intersect]
                     </div>
-                    <a href="secant.html" class="text-xs font-black text-blue-600 uppercase hover:underline">Visual Details ↗</a>
+                    <a href="secant.html" class="text-xs font-black text-blue-600 uppercase hover:underline inline-flex items-center">
+                        Explore Method <span class="ml-1">→</span>
+                    </a>
                 </div>
 
-                <div class="method-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col h-full">
+                <div class="method-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col">
                     <h3 class="text-xl font-bold text-gray-900">Newton-Raphson</h3>
-                    <p class="text-sm text-gray-500 mt-3 flex-grow leading-relaxed">
-                        The standard for quadratic convergence. It uses the function's slope to "shoot" toward the root, vital for the 2-D problems presented later.
+                    <p class="text-sm text-gray-500 mt-4 flex-grow leading-relaxed">
+                        The gold standard for speed. By using the tangent at a point, it achieves quadratic convergence toward the solution.
                     </p>
-                    <div class="mt-4 mb-4 h-24 bg-gray-50 rounded-lg border flex items-center justify-center text-[10px] text-gray-400 uppercase font-black">
-                        [Newton Tangent Animation]
+                    <div class="my-6 h-32 bg-gray-50 rounded-xl border flex items-center justify-center text-[10px] text-gray-400 font-black uppercase">
+                        [Graphic: Tangent Convergence]
                     </div>
-                    <a href="newton.html" class="text-xs font-black text-blue-600 uppercase hover:underline">Visual Details ↗</a>
+                    <a href="newton.html" class="text-xs font-black text-blue-600 uppercase hover:underline inline-flex items-center">
+                        Explore Method <span class="ml-1">→</span>
+                    </a>
                 </div>
 
             </div>
         </section>
 
         <section class="mb-20">
-            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-6">Algorithm Snapshots (Julia)</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-8">Julia Implementation</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="space-y-4">
-                    <span class="text-xs font-bold text-gray-400 uppercase">Picard Iteration</span>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Fixed-Point Iteration (Picard)</span>
                     <pre class="code-block">
-# Simple Picard Fixed-Point
-function picard(f, x0, tol, max_iter)
+function picard_iteration(g, x0; tol=1e-7, max_iter=100)
     x = x0
     for i in 1:max_iter
-        x_next = f(x)
-        if abs(x_next - x) < tol
-            return x_next
+        x_new = g(x)
+        if abs(x_new - x) < tol
+            return x_new, i
         end
-        x = x_next
+        x = x_new
+    end
+    error("Did not converge")
+end</pre>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">2D Newton-Raphson Base</span>
+                    <pre class="code-block">
+function newton_2d(f, J, x_start; tol=1e-8)
+    x = x_start
+    while norm(f(x)) > tol
+        x -= J(x) \ f(x) # Efficient solver
     end
     return x
 end</pre>
                 </div>
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-gray-400 uppercase">Newton 2-D Base</span>
-                    <pre class="code-block">
-# Multidimensional Newton Step
-function newton_step(F, J, x)
-    # J is the Jacobian matrix
-    return x - J(x) \ F(x)
-end</pre>
-                </div>
             </div>
         </section>
 
-        <section class="bg-gray-900 rounded-3xl p-10 text-white">
-            <h2 class="text-3xl font-black mb-6 uppercase tracking-tight">Numerical Exercises</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div>
-                    <h4 class="text-springer-yellow font-bold text-lg mb-4">Original Book Problems</h4>
-                    <ul class="space-y-4">
-                        <li class="border-l-2 border-gray-700 pl-4">
-                            <p class="text-sm font-bold">1.1 Energy Balance Model</p>
-                            <p class="text-xs text-gray-400 mt-1">Solving for planetary equilibrium temperature using Secant and Newton methods.</p>
-                            <a href="problems/1-1.html" class="text-[10px] text-blue-400 font-bold uppercase hover:underline mt-2 inline-block">See Solution ↗</a>
-                        </li>
-                        <li class="border-l-2 border-gray-700 pl-4">
-                            <p class="text-sm font-bold">1.2 Population Dynamics</p>
-                            <p class="text-xs text-gray-400 mt-1">Finding steady states in a discrete logistic growth model.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="border-t md:border-t-0 md:border-l border-gray-700 pt-8 md:pt-0 md:pl-10">
-                    <h4 class="text-springer-yellow font-bold text-lg mb-4">New Digital Content</h4>
-                    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-                        <p class="text-sm italic text-gray-300">"Coming soon: Interactive Julia notebooks for 2-D Newton-Raphson convergence paths."</p>
-                        <span class="inline-block mt-4 bg-springer-yellow text-gray-900 text-[10px] font-black px-2 py-1 rounded">PENDING UPDATE</span>
+        <section class="bg-gray-900 rounded-[3rem] p-12 text-white shadow-2xl">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl font-black mb-8 uppercase tracking-tight">Numerical Exercises</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-springer-yellow pl-6">
+                            <h4 class="font-bold text-xl mb-2">1.1 Earth Radiation Balance</h4>
+                            <p class="text-sm text-gray-400">Calculate the equilibrium temperature of a zero-dimensional climate model using the methods above.</p>
+                            <a href="exercises/1-1.html" class="mt-4 inline-block text-[10px] font-black uppercase tracking-widest text-springer-yellow hover:text-white transition">View Exercise ↗</a>
+                        </div>
+                        <div class="border-l-4 border-gray-700 pl-6">
+                            <h4 class="font-bold text-xl mb-2">1.2 Two-Dimensional Systems</h4>
+                            <p class="text-sm text-gray-400">Solving for stationary points in coupled environmental equations.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700">
+                        <h4 class="text-springer-yellow font-black uppercase tracking-tighter mb-4">New Digital Content</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                            I am currently developing interactive Pluto.jl notebooks to visualize these exercises in real-time. Stay tuned for updates.
+                        </p>
+                        <span class="text-[10px] bg-gray-700 px-3 py-1 rounded-full text-gray-400 font-bold uppercase tracking-widest">Development Phase</span>
                     </div>
                 </div>
             </div>
@@ -150,11 +185,10 @@ end</pre>
 
     </main>
 
-    <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
-        <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2026 Mathematics for the Environment | Digital Edition by N. Bodnariuk</p>
         <p class="mt-2 text-xs opacity-75">
-            For any inquiries, please contact me at: 
-            <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+            Contact: <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
         </p>
     </footer>
 
