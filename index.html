@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 1 - Solving nonlinear equations</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Definición de la fuente Inter y estilos académicos */
@@ -34,25 +33,19 @@
 </head>
 <body>
 
-    <!-- CABECERA y NAVEGACIÓN (Fija) -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Título del Libro -->
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
                 Mathematics for the <span class="text-springer-yellow">Environment</span>
             </a>
-            <!-- Navegación de Capítulos (Ajustar según el número de capítulos) -->
             <nav class="hidden md:flex space-x-4">
                 <a href="index.html" class="text-gray-600 hover:text-gray-900 p-2 rounded-lg transition duration-150">Home</a>
-                <!-- Agrega más capítulos aquí -->
-            </nav>
+                </nav>
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL DEL CAPÍTULO (PLANTILLA) -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
-        <!-- Banner del Capítulo -->
         <div class="springer-yellow p-6 rounded-xl shadow-lg mb-8">
             <h1 class="text-3xl font-bold text-gray-900">
                Chapter 1: Solving nonlinear equations
@@ -62,10 +55,9 @@
             </p>
         </div>
 
-        <!-- SECCIÓN 1: Ejercicios Numéricos -->
         <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">1. Numerical problems</h2>
-            <div id="ejercicios">
+            <div id="ejercicios-i">
                 <h3 class="text-xl font-medium mt-4 text-springer-yellow"> (i) Global temperature from Earth radiation balance</h3>
                 <p class="text-gray-600 mt-2">
 Application of the secant, Picard and Newthon methods               </p>
@@ -76,7 +68,7 @@ Application of the secant, Picard and Newthon methods               </p>
                     Download solution (.pdf)
                 </button>
             </div>
-            <div id="ejercicios">
+            <div id="ejercicios-ii">
                 <h3 class="text-xl font-medium mt-4 text-springer-yellow"> (ii) Anthropogenic effect on Earth's radiation balance</h3>
                 <p class="text-gray-600 mt-2">
 Brief description to be pasted here or write down the full exercise             </p>
@@ -89,14 +81,12 @@ Brief description to be pasted here or write down the full exercise             
             </div>
         </section>
 
-        <!-- SECCIÓN 2: Código y Archivos -->
         <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">2. Coding in Julia</h2>
             <div id="codigo">
                 <p class="mb-4 text-gray-600">
                     A glimpse of the secant method
                 </p>
-                <!-- Bloque de Código de Ejemplo -->
                 <pre class="code-block">
 # Julia Code Snippet for Exercise I
 
@@ -121,42 +111,85 @@ end
             </div>
         </section>
 
-        <!-- SECCIÓN 3: Figuras y Visualizaciones -->
         <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">3. Illustrations of the methodologies</h2>
-            <div id="figuras" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Columna de Figura -->
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-medium mb-2">Figure 1: Picard Iteration at work</h3>
-                    <!-- Placeholder para la figura (cambiar por URL real) -->
-                    <img src="https://placehold.co/600x400/FFC300/000000?text=Figure+1:+secant method" 
-                         alt="Placeholder para figura del modelo" 
-                         class="w-full h-auto rounded-lg shadow-md border-2 border-springer-yellow">
-                    <p class="text-sm text-gray-500 mt-2">
-                        Here comes the caption
-                    </p>
+            
+            <h3 class="text-xl font-medium mb-4 text-springer-yellow">Visualizing 2D Newton's Method Iterations</h3>
+            <p class="mb-6 text-gray-600">
+                The following sequence illustrates the convergence path of the 2D Newton's method towards the solution.
+            </p>
+
+            <div id="figuras-newton" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_1.png" 
+                         alt="Newton 2D Method - Iteration 1" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+1+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 1 (Initial Guess)</p>
                 </div>
-                <!-- Columna de Video -->
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-medium mb-2">Animation of the secant method </h3>
-                    <!-- Placeholder de Video (incrustar YouTube/Vimeo o usar un placeholder) -->
-                    <div class="aspect-w-16 aspect-h-9 w-full bg-gray-300 flex items-center justify-center rounded-lg">
-                        <p class="text-gray-700">
-                            <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Video"
-                                 alt="Placeholder para video de animación"
-                                 class="w-full h-auto rounded-lg">
-                        </p>
-                    </div>
-                    <p class="text-sm text-gray-500 mt-2">
-                        Animation of the secant method
-                    </p>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_2.png" 
+                         alt="Newton 2D Method - Iteration 2" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+2+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 2</p>
                 </div>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_3.png" 
+                         alt="Newton 2D Method - Iteration 3" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+3+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 3</p>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_4.png" 
+                         alt="Newton 2D Method - Iteration 4" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+4+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 4</p>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_5.png" 
+                         alt="Newton 2D Method - Iteration 5" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+5+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 5</p>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_6.png" 
+                         alt="Newton 2D Method - Iteration 6" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+6+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 6</p>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_7.png" 
+                         alt="Newton 2D Method - Iteration 7" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+7+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 7</p>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <img src="Newton_2D_fig_8.png" 
+                         alt="Newton 2D Method - Iteration 8" 
+                         class="w-full h-auto rounded-lg mb-2 hover:shadow-md transition-shadow duration-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/f7f7f7/a1a1a1?text=Img+8+Not+Found';">
+                    <p class="text-sm font-medium text-gray-700">Iteration 8 (Final)</p>
+                </div>
+
             </div>
         </section>
         
     </main>
 
-    <!-- FOOTER -->
     <footer class="springer-yellow mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-800">
             <p>&copy; 2025 Mathematics for the Environment | Published by Springer</p>
