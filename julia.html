@@ -10,7 +10,6 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
-        .code-block { background-color: #1e1e1e; color: #d4d4d4; padding: 1.5rem; border-radius: 1rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; border: 1px solid #333; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -34,71 +33,63 @@
             <h1 class="text-5xl font-black text-gray-900 mt-2 mb-8 uppercase tracking-tighter">Julia Engine</h1>
             
             <div class="prose prose-lg text-gray-700 leading-relaxed space-y-6">
-                <p>
-                    Como se menciona en el libro, <em>"la filosofía está escrita en este grandísimo libro que continuamente está abierto ante nuestros ojos... pero no se puede entender si primero no se aprende a entender la lengua"</em>. En el contexto de la modelización ambiental moderna, esa lengua es matemática, pero su ejecución requiere una herramienta capaz de traducir la teoría en simulaciones de alto rendimiento.
+                <p class="italic text-gray-500 border-l-4 border-gray-200 pl-6">
+                    "Philosophy is written in this grand book—I mean the Universe—which stands continually open to our gaze, but it cannot be understood unless one first learns to comprehend the language and interpret the characters in which it is written. It is written in the language of mathematics..." 
+                    <br><span class="text-xs font-bold uppercase tracking-widest">— Galileo Galilei, Il Saggiatore</span>
                 </p>
 
-                <h3 class="text-2xl font-bold text-gray-900 pt-4">¿Por qué Julia?</h3>
                 <p>
-                    La elección de Julia para los problemas numéricos de esta obra no es arbitraria. Responde a la necesidad de resolver el **"problema de los dos lenguajes"**: la capacidad de escribir código que sea tan fácil de leer como Python pero tan rápido como Fortran o C.
+                    In the context of modern environmental modeling, mathematics is the language, but execution requires a tool capable of translating theory into high-performance simulations. The choice of <strong>Julia</strong> for the numerical problems in this work is a strategic response to the needs of contemporary scientific computing.
                 </p>
 
-                <ul class="space-y-4 list-none pl-0">
+                <h3 class="text-2xl font-bold text-gray-900 pt-4">Why Julia?</h3>
+                <p>
+                    Julia was designed to solve the "two-language problem," offering a syntax as intuitive as Python with the execution speed of Fortran or C. For the study of geophysical fluids and non-linear dynamics, this balance is essential.
+                </p>
+
+                <ul class="space-y-6 list-none pl-0">
                     <li class="flex items-start">
                         <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">01</span>
-                        <span><strong>Rendimiento para Dinámicas Caóticas:</strong> La resolución de sistemas de ecuaciones no lineales y fluidos geofísicos requiere una eficiencia computacional que solo la compilación Just-In-Time (JIT) de Julia puede ofrecer para procesos iterativos complejos.</span>
+                        <span><strong>Performance for Chaotic Dynamics:</strong> Solving non-linear equations and geophysical fluid systems requires computational efficiency that only Julia’s Just-In-Time (JIT) compilation can provide for complex iterative processes.</span>
                     </li>
                     <li class="flex items-start">
                         <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">02</span>
-                        <span><strong>Sintaxis Matemática:</strong> Permite una correspondencia casi directa entre las fórmulas del texto y el código, facilitando la implementación de métodos como Newton-Raphson o la integración de ODEs.</span>
+                        <span><strong>Mathematical Syntax:</strong> Julia allows a near-direct correspondence between the formulas found in the text and the actual code, simplifying the implementation of methods like Newton-Raphson or the integration of ODEs.</span>
                     </li>
                     <li class="flex items-start">
                         <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">03</span>
-                        <span><strong>Ecosistema Científico:</strong> El uso de librerías como <code>DifferentialEquations.jl</code> es estándar en la investigación actual de sistemas dinámicos y geociencias.</span>
+                        <span><strong>Scientific Ecosystem:</strong> Access to state-of-the-art libraries such as <code>DifferentialEquations.jl</code> is now the standard for research in dynamical systems and geosciences.</span>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <section class="mb-20">
-            <h2 class="text-xl font-black text-gray-900 uppercase tracking-tight mb-6 border-b pb-2">Implementation Preview</h2>
-            <div class="space-y-4">
-                <p class="text-sm text-gray-500 italic">Ejemplo de una iteración de punto fijo para encontrar equilibrios climáticos:</p>
-                <pre class="code-block">
-# Simple Picard Iteration for Climate Equilibria
-function solve_balance(f, x0; tol=1e-8, max_iter=100)
-    x = x0
-    for i in 1:max_iter
-        x_new = f(x)
-        if abs(x_new - x) < tol
-            return x_new, i # Converged
-        end
-        x = x_new
-    end
-    return nothing
-end</pre>
-            </div>
+        <section class="mb-16 py-8 border-t border-gray-200">
+            <p class="text-sm text-gray-500 mb-4">For more information about the language and its capabilities, visit the official website:</p>
+            <a href="https://julialang.org" target="_blank" class="inline-flex items-center text-lg font-bold text-gray-900 hover:text-springer-yellow transition">
+                julialang.org <span class="ml-2">↗</span>
+            </a>
         </section>
 
         <section class="bg-gray-900 rounded-3xl p-10 text-white shadow-xl">
             <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Ready to simulate?</h3>
             <p class="text-gray-400 mb-8 leading-relaxed">
-                Todos los problemas numéricos propuestos por Nicolás Bodnariuk en los tomos I y II están disponibles como notebooks ejecutables.
+                All numerical problems proposed by Nicolás Bodnariuk in Parts I and II are available as executable notebooks.
             </p>
             <div class="flex gap-4">
                 <a href="https://github.com/" target="_blank" class="bg-white text-gray-900 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-springer-yellow transition">
                     GitHub Repository
                 </a>
                 <a href="contents.html" class="border border-gray-700 text-gray-400 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:text-white hover:border-white transition">
-                    Back to Chapters
+                    Explore Chapters
                 </a>
             </div>
         </section>
 
     </main>
 
-    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium">
-        <p>&copy; 2026 Mathematics for the Environment | Digital Edition</p>
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium border-t border-black/5">
+        <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
         <p class="mt-2 text-xs opacity-75">
             Numerical Problems by <span class="font-bold">Nicolás Bodnariuk</span>
         </p>
