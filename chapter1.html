@@ -35,7 +35,7 @@
             </div>
             <h1 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">Solving Nonlinear Equations</h1>
             <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">
-                This chapter explores fundamental iterative methods used to solve energy balance models and other environmental equilibrium states.
+                Fundamental iterative methods used to solve energy balance models and other environmental equilibrium states.
             </p>
             <p class="text-sm text-gray-400 mt-4 italic font-medium">Numerical problems curated by Nicolás Bodnariuk</p>
         </div>
@@ -43,27 +43,19 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             <div class="lg:col-span-2 space-y-12">
-                
                 <section>
                     <h2 class="text-xl font-black text-gray-900 uppercase tracking-tighter mb-6 flex items-center">
                         <span class="w-8 h-8 springer-yellow rounded-full flex items-center justify-center text-sm mr-3">1</span>
                         Numerical Problems
                     </h2>
-                    
                     <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition hover:shadow-md">
                         <h3 class="text-xl font-bold text-gray-900 mb-2">(i) Global temperature from Earth radiation balance</h3>
                         <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Application of the <strong>Secant, Picard, and Newton</strong> methods to determine the planetary equilibrium temperature. Includes error analysis and convergence rate comparison.
+                            Application of the <strong>Secant, Picard, and Newton</strong> methods to determine the planetary equilibrium temperature.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <button class="flex items-center px-5 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-xs font-bold hover:bg-gray-200 transition">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                                Formulation (.pdf)
-                            </button>
-                            <button class="flex items-center px-5 py-2.5 bg-blue-50 text-blue-600 rounded-lg text-xs font-bold hover:bg-blue-100 transition">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                Full Solution (.pdf)
-                            </button>
+                            <button class="px-5 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-xs font-bold hover:bg-gray-200 transition">Formulation (.pdf)</button>
+                            <button class="px-5 py-2.5 bg-blue-50 text-blue-600 rounded-lg text-xs font-bold hover:bg-blue-100 transition">Full Solution (.pdf)</button>
                         </div>
                     </div>
                 </section>
@@ -73,61 +65,35 @@
                         <span class="w-8 h-8 springer-yellow rounded-full flex items-center justify-center text-sm mr-3">2</span>
                         Coding in Julia
                     </h2>
-                    <div class="space-y-4">
-                        <p class="text-sm text-gray-500 italic">Core implementation of the Secant algorithm:</p>
-                        <pre class="code-block">
-# Secant Method Implementation
+                    <pre class="code-block">
 function secant_method(f, x0, x1; tol=1e-8, max_iter=100)
     for i in 1:max_iter
         fx0, fx1 = f(x0), f(x1)
-        # Avoid division by zero
         x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0)
-        
-        if abs(x2 - x1) < tol
-            return x2 # Root found
-        end
+        if abs(x2 - x1) < tol; return x2; end
         x0, x1 = x1, x2
     end
-    error("Method did not converge after $max_iter iterations")
+    error("Method did not converge")
 end</pre>
-                    </div>
                 </section>
             </div>
 
             <div class="lg:col-span-1">
-                <div class="sticky top-24">
-                    <div class="bg-gray-900 rounded-3xl p-8 text-white shadow-2xl overflow-hidden relative group">
-                        <div class="absolute -right-4 -top-4 w-24 h-24 springer-yellow rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
-                        
-                        <h2 class="text-2xl font-black mb-4 relative z-10 leading-tight">Interactive Visualizations</h2>
-                        <p class="text-gray-400 text-sm mb-8 relative z-10">
-                            See how the 2D Newton-Raphson method finds roots through 8 iterative steps in a multi-dimensional space.
-                        </p>
-                        
-                        <a href="newton2d.html" class="block w-full py-4 bg-springer-yellow text-gray-900 text-center rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white transition-colors relative z-10">
-                            Open Newton 2D Tool →
-                        </a>
-
-                        <div class="mt-8 pt-8 border-t border-gray-800">
-                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest mb-2">Algorithm highlights</p>
-                            <ul class="text-xs text-gray-300 space-y-2">
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-2"></span> Jacobian Matrix</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-2"></span> Local Convergence</li>
-                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-2"></span> Iterative Progress</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="sticky top-24 bg-gray-900 rounded-3xl p-8 text-white shadow-2xl overflow-hidden relative group">
+                    <h2 class="text-2xl font-black mb-4 relative z-10">Interactive Visuals</h2>
+                    <p class="text-gray-400 text-sm mb-8 relative z-10">
+                        See how the 2D Newton-Raphson method finds roots through 8 iterative steps.
+                    </p>
+                    <a href="newton2d.html" class="block w-full py-4 bg-springer-yellow text-gray-900 text-center rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white transition relative z-10">
+                        Newton 2D Tool →
+                    </a>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-white border-t py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm text-gray-400 font-medium tracking-wide">
-                © 2025 Mathematics for the Environment | Digital Edition companion for Springer.
-            </p>
-        </div>
+    <footer class="bg-white border-t py-12 text-center text-gray-400 text-sm">
+        <p>© 2025 Mathematics for the Environment</p>
     </footer>
 
 </body>
