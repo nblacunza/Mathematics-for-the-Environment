@@ -10,192 +10,122 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
+        .book-card { 
+            box-shadow: 20px 20px 50px -15px rgba(0,0,0,0.1);
+            border-l: 10px solid rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
     <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
                 Mathematics for the <span class="text-springer-yellow">Environment</span>
             </a>
             <nav class="flex items-center space-x-6">
-                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center">
-                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Julia Code
+                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center uppercase tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Julia Engine
                 </a>
-                <a href="contents.html" class="text-sm font-bold text-gray-900 transition uppercase tracking-widest font-black">Chapters</a>
                 <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-16 flex-grow">
-        <section id="chapters">
-            <div class="mb-12">
-                <h2 class="text-4xl font-black text-gray-900 mt-2 mb-2 uppercase tracking-tight">Table of Contents</h2>
-                <div class="h-1.5 w-24 springer-yellow"></div>
-            </div>
+    <main class="max-w-7xl mx-auto px-6 py-16 flex-grow">
+        
+        <div class="mb-16">
+            <h2 class="text-5xl font-black text-gray-900 uppercase tracking-tighter">Table of Contents</h2>
+            <div class="h-1.5 w-32 springer-yellow mt-4"></div>
+        </div>
 
-            <div class="mb-16">
-                <h3 class="text-xl font-black text-gray-400 uppercase tracking-widest border-b pb-2 mb-8">Part I: Mathematical Tools</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                    
-                    <a href="chapter1.html" class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-yellow-400">
-                        <span class="text-xs text-springer-yellow font-black tracking-widest uppercase">Chapter 1</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2 group-hover:text-yellow-600 transition">Solving Nonlinear Equations</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Numerical methods approach • Solving scalar equations • Dichotomy, false position, secant, Picard and Newton methods • Multidimensional problems in 2-D.
-                        </p>
-                        <div class="mt-6 flex items-center text-sm font-bold text-gray-400 group-hover:text-gray-900">
-                            View Resources <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+        <section class="mb-24 flex flex-col lg:flex-row gap-12">
+            <div class="lg:w-1/4">
+                <div class="sticky top-28">
+                    <div class="springer-yellow book-card rounded-r-2xl w-full aspect-[3/4] p-6 flex flex-col justify-between relative overflow-hidden">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-black/40">Volume I</span>
+                        <div>
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Mathematical Tools</h3>
+                            <div class="h-1 w-10 bg-black mt-3"></div>
                         </div>
-                    </a>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 2</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Elementary Topology</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Topology of the real line • Metric spaces, distances, and norms • Completeness and convergence • Compactness • Lipschitz continuity • Connectedness.
-                        </p>
+                        <p class="text-[10px] font-black uppercase text-black/30">Springer</p>
                     </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 3</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Linear Algebra and Applications</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Notation and conventions • Square matrices • Orthogonal subspaces • Eigenvalues and eigenvectors • Matrix norms • Irreducible matrices • Google matrix analysis.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 4</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Solving Linear Systems Ax = b</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Direct numerical methods • Gaussian elimination • LU factorization • Householder's method • Iterative methods: Jacobi, Gauss-Seidel and relaxation.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 5</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Eigenvalues and Eigenvectors</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Stability and conditioning • Power method • Perron-Frobenius theorems • Givens-Householder bisection • LR Rutishauser and GR methods.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 6</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Interpolation and Approximation</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Lagrange polynomials • Hermite interpolation • Spline functions • Cubic splines definition and error • Akima's method for interpolation.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 7</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Numerical Integration Methods</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Riemann sums • Elementary quadrature • Lagrange and Newton-Cotes rules (Trapezoidal, Simpson) • Gaussian and Hermite quadrature.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 8</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Introduction to ODEs</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Initial and boundary value problems • Qualitative behavior • Existence and uniqueness • Autonomous system flows • Explicit solution methods.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 9</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Linear Autonomous Systems</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Integration of linear systems • Matrix exponential • Phase portrait of linear 2-D systems • Higher-order and quasi-autonomous systems.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 10</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Numerically Solving ODEs</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            One-step methods • Euler-Cauchy and implicit methods • A-stability and stiff problems • Runge-Kutta methods • Multistep methods.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 11</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Elements of Topological Dynamics</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Lyapunov stability • Dissipativity and boundedness • Multiple equilibria and global attractors • Conservative systems • Structural stability.
-                        </p>
-                    </div>
+                    <p class="mt-6 text-sm text-gray-400 font-medium leading-relaxed italic">
+                        Foundational concepts from topology to topological dynamics.
+                    </p>
                 </div>
             </div>
 
-            <div class="mt-16">
-                <h3 class="text-xl font-black text-gray-400 uppercase tracking-widest border-b pb-2 mb-8">Part II: Applications to Climate and Ecology</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                    
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 12</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Basic Facts of the Climate Sciences</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Radiation balance and energy balance models (EBM) • Atmospheric processes • Thermohaline circulation • Bistability and Hopf bifurcations.
-                        </p>
-                    </div>
+            <div class="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="chapter1.html" class="group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-springer-yellow transition-all">
+                    <span class="text-[10px] font-black text-springer-yellow uppercase">Chapter 1</span>
+                    <h4 class="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition">Solving Nonlinear Equations</h4>
+                    <p class="text-xs text-gray-500 mt-2 leading-relaxed">Numerical methods • Scalar equations • Dichotomy, Secant, Newton • 2-D problems.</p>
+                </a>
+                <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 opacity-60">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Chapter 2</span>
+                    <h4 class="text-lg font-bold text-gray-900">Elementary Topology</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Metric spaces • Completeness • Compactness • Lipschitz continuity • Connectedness.</p>
+                </div>
+                <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 opacity-60">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Chapter 3</span>
+                    <h4 class="text-lg font-bold text-gray-900">Linear Algebra & Applications</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Square matrices • Eigenvalues • Matrix norms • Google matrix analysis.</p>
+                </div>
+                <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 opacity-60">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Chapter 4 - 11</span>
+                    <h4 class="text-lg font-bold text-gray-900">Advanced Tools</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Linear Systems • ODEs • Numerical Integration • Topological Dynamics.</p>
+                </div>
+            </div>
+        </section>
 
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 13</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Nonlinear Systems and Bifurcations</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Nonlinear planar ODE systems • Poincaré-Bendixson theorem • Equilibria in 2-D (nodes, saddles, foci) • Saddle-node and pitchfork bifurcations.
-                        </p>
-                    </div>
+        <div class="h-px bg-gray-200 w-full mb-24"></div>
 
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 14</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Studying the Atmosphere and Oceans</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Quasi-geostrophic vorticity equations • Coupled atmosphere-ocean modes • Internal variability and routes to chaos • Lorenz convection model.
-                        </p>
+        <section class="flex flex-col lg:flex-row gap-12">
+            <div class="lg:w-1/4">
+                <div class="sticky top-28">
+                    <div class="bg-gray-900 book-card rounded-r-2xl w-full aspect-[3/4] p-6 flex flex-col justify-between relative overflow-hidden">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-white/40">Volume II</span>
+                        <div class="text-white">
+                            <h3 class="text-2xl font-black leading-tight">Climate & Ecology</h3>
+                            <div class="h-1 w-10 bg-springer-yellow mt-3"></div>
+                        </div>
+                        <p class="text-[10px] font-black uppercase text-white/30">Springer</p>
                     </div>
+                    <p class="mt-6 text-sm text-gray-400 font-medium leading-relaxed italic">
+                        Real-world modeling of atmosphere, oceans, and populations.
+                    </p>
+                </div>
+            </div>
 
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 15</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Applications to Ecology</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Single population dynamics • Exponential and logistic models • Predation and competition • Lotka-Volterra and Holling models • Age distribution.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 16</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Numerical Bifurcations in Climate Models</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Continuation methods • Pseudo-arclength and branch switching • Wind-driven ocean circulation • Shallow-water and primitive-equation models.
-                        </p>
-                    </div>
-
-                    <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
-                        <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 17</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Natural Variability and Forced Changes</h3>
-                        <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Floquet theory • Nonautonomous dynamical systems (NDS) • Pullback and random attractors • Anthropogenic effects on chaotic climate models.
-                        </p>
-                    </div>
-
+            <div class="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 opacity-60">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Chapter 12</span>
+                    <h4 class="text-lg font-bold text-gray-900">Climate Sciences</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Radiation balance • EBMs • Thermohaline circulation • Bistability.</p>
+                </div>
+                <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 opacity-60">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Chapter 13</span>
+                    <h4 class="text-lg font-bold text-gray-900">Bifurcations</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Poincaré-Bendixson • Nonlinear planar ODEs • Equilibrium nodes.</p>
+                </div>
+                <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 opacity-60">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Chapter 14 - 17</span>
+                    <h4 class="text-lg font-bold text-gray-900">Complexity & Chaos</h4>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed">Ocean dynamics • Ecology models • Natural variability • NDS.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium">
         <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
         <p class="mt-2 text-xs opacity-75">
             For questions or feedback, contact me at: 
             <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
         </p>
     </footer>
+
 </body>
 </html>
