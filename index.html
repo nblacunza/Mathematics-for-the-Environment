@@ -15,49 +15,52 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <div id="authorModal" class="fixed inset-0 z-[100] hidden modal-bg flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+    <div id="authorModal" class="fixed inset-0 z-[100] hidden modal-bg flex items-center justify-center p-4" onclick="closeAuthors()">
+        <div class="bg-white w-full max-w-6xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
             <div class="p-6 border-b flex justify-between items-center bg-gray-50">
                 <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight">About the Authors</h2>
                 <button onclick="closeAuthors()" class="text-gray-400 hover:text-black text-4xl leading-none">&times;</button>
             </div>
             
-            <div class="p-8 overflow-y-auto space-y-10">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="space-y-4 text-center">
-                        <img src="fig_michael.jpg" alt="Michael Ghil" class="w-32 h-32 rounded-full mx-auto object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=MG'">
-                        <div class="space-y-1">
-                            <h4 class="font-bold text-xl text-gray-900">Michael Ghil</h4>
+            <div class="p-10 overflow-y-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                    
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <img src="fig_michael.jpg" alt="Michael Ghil" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=MG'">
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Author</span>
+                            <h4 class="font-bold text-xl text-gray-900 leading-tight">Michael Ghil</h4>
                             <p class="text-sm text-gray-600 leading-relaxed px-2">Distinguished Professor at UCLA and ENS. A pioneer in climate dynamics and nonlinear sciences.</p>
                         </div>
                     </div>
-                    <div class="space-y-4 text-center">
-                        <img src="fig_alain.jpeg" alt="Alain Haraux" class="w-32 h-32 rounded-full mx-auto object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=AH'">
-                        <div class="space-y-1">
-                            <h4 class="font-bold text-xl text-gray-900">Alain Haraux</h4>
+
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <img src="fig_alain.jpeg" alt="Alain Haraux" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=AH'">
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Author</span>
+                            <h4 class="font-bold text-xl text-gray-900 leading-tight">Alain Haraux</h4>
                             <p class="text-sm text-gray-600 leading-relaxed px-2">Director of Research at CNRS. Expert in mathematical analysis and partial differential equations.</p>
                         </div>
                     </div>
-                    <div class="space-y-4 text-center">
-                        <img src="fig_jean.jpeg" alt="Jean Roux" class="w-32 h-32 rounded-full mx-auto object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=JR'">
-                        <div class="space-y-1">
-                            <h4 class="font-bold text-xl text-gray-900">Jean Roux</h4>
+
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <img src="fig_jean.jpeg" alt="Jean Roux" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=JR'">
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Author</span>
+                            <h4 class="font-bold text-xl text-gray-900 leading-tight">Jean Roux</h4>
                             <p class="text-sm text-gray-600 leading-relaxed px-2">Renowned specialist in Numerical Analysis and its applications to environmental modeling.</p>
                         </div>
                     </div>
-                </div>
 
-                <hr class="border-gray-100">
-
-                <div class="bg-yellow-50 p-8 rounded-3xl border border-yellow-200">
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <img src="fig_nicolas.jpeg" alt="Nicolás Bodnariuk" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-yellow-300" onerror="this.src='https://placehold.co/150x150?text=NB'">
-                        <div class="text-center md:text-left">
-                            <h4 class="font-bold text-gray-900 text-2xl">Nicolás Bodnariuk</h4>
-                            <p class="text-sm text-springer-yellow font-bold uppercase tracking-widest mt-1">Numerical Problems & Julia Implementations</p>
-                            <p class="text-base text-gray-700 mt-3 leading-relaxed">Specialist in computational mathematics, responsible for the digital companion and numerical visualizations of the series.</p>
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <img src="fig_nicolas.jpeg" alt="Nicolás Bodnariuk" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/150x150?text=NB'">
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-widest">Numerical Problems</span>
+                            <h4 class="font-bold text-xl text-gray-900 leading-tight">Nicolás Bodnariuk</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed px-2">Specialist in computational mathematics, responsible for the digital companion and numerical visualizations.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -97,14 +100,14 @@
 
             <div class="flex justify-center">
                 <div class="springer-yellow rounded-r-2xl w-full max-w-xs aspect-[3/4] flex flex-col shadow-2xl rotate-2 transition-transform hover:rotate-0 duration-500 border-l-8 border-black/10 overflow-hidden">
-                    <div class="p-6 pb-0">
+                    <div class="p-6 pb-0 text-left">
                         <p class="text-[10px] font-black uppercase tracking-tighter text-black/80 leading-tight">
                             Michael Ghil<br>Alain Haraux<br>Jean Roux
                         </p>
                     </div>
-                    <div class="flex-grow flex flex-col justify-center p-6 text-center md:text-left">
+                    <div class="flex-grow flex flex-col justify-center p-6 text-left">
                         <h2 class="text-3xl font-black text-gray-900 leading-none mb-4">Mathematics for the Environment</h2>
-                        <div class="h-1 w-12 bg-black mx-auto md:mx-0"></div>
+                        <div class="h-1 w-12 bg-black"></div>
                     </div>
                     <div class="p-6 pt-0">
                         <p class="text-[9px] font-bold text-black/60 italic leading-tight border-t border-black/10 pt-4">
@@ -129,10 +132,6 @@
         function closeAuthors() {
             document.getElementById('authorModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
-        }
-        window.onclick = function(event) {
-            let modal = document.getElementById('authorModal');
-            if (event.target == modal) closeAuthors();
         }
     </script>
 </body>
