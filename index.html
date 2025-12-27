@@ -3,49 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newton 2D - Welcome</title>
+    <title>Mathematics for the Environment - Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
+        .text-springer-yellow { color: #FFC300; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-center items-center p-6">
-
-    <main class="max-w-4xl w-full flex flex-col md:flex-row items-center gap-12">
-        <div class="relative w-48 md:w-64 flex-shrink-0 shadow-2xl transition-transform hover:scale-105 duration-500">
-            <div class="springer-yellow aspect-[3/4] rounded-r-lg border-l-8 border-black/10 flex flex-col p-6 justify-between">
-                <div>
-                    <div class="h-1 w-12 bg-black mb-2"></div>
-                    <h2 class="text-xs font-black uppercase tracking-widest text-black/60">Numerical Methods</h2>
-                </div>
-                <h1 class="text-2xl font-black leading-tight text-gray-900">Newton 2D<br>Convergence</h1>
-                <div class="text-[10px] font-bold text-black/40">EDITION 2025</div>
-            </div>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
+            </a>
         </div>
+    </header>
 
-        <div class="text-center md:text-left">
-            <h1 class="text-5xl font-black text-gray-900 mb-4 tracking-tighter">
-                Mastering the <span class="text-gray-400">Iterative</span> World.
-            </h1>
-            <p class="text-gray-600 text-lg mb-8 max-w-md">
-                A deep dive into the mathematical beauty of the 2D Newton-Raphson method and its convergence visualizations.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="contents.html" class="bg-gray-900 text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition shadow-lg text-center">
+    <main class="max-w-7xl mx-auto px-4 py-16 flex-grow flex items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+            <div>
+                <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Digital Companion</span>
+                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 leading-tight">
+                    Mathematics for the <br><span class="text-springer-yellow px-2">Environment</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Explore digital resources, code implementations in Julia, and interactive visualizations designed to complement the Springer publication.
+                </p>
+                <a href="contents.html" class="bg-gray-900 text-white px-10 py-4 rounded-full font-bold hover:bg-gray-800 transition shadow-lg inline-block">
                     Explore the Book
                 </a>
-                <a href="#" class="border-2 border-gray-200 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition text-center text-gray-700">
-                    Sample PDF
-                </a>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="springer-yellow rounded-2xl w-full max-w-xs aspect-[3/4] flex items-center justify-center shadow-2xl rotate-2 transition-transform hover:rotate-0 duration-500">
+                    <div class="text-center p-8 border-l-8 border-black/10 h-full w-full flex flex-col justify-center">
+                        <p class="text-xs font-black uppercase tracking-tighter mb-4 opacity-60 text-black">Springer Series</p>
+                        <h2 class="text-3xl font-black text-gray-900 leading-none mb-2">Mathematics for the Environment</h2>
+                        <div class="mt-8 h-1 w-12 bg-black mx-auto"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="absolute bottom-8 text-gray-400 text-sm">
-        © 2025 Springer-style Visualizations Series
+    <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2025 Mathematics for the Environment | Published by Springer</p>
     </footer>
-
 </body>
 </html>
