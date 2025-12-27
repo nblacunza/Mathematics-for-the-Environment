@@ -10,9 +10,50 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
+        .modal-bg { background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(4px); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
+
+    <div id="authorModal" class="fixed inset-0 z-[100] hidden modal-bg flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight">About the Authors</h2>
+                <button onclick="closeAuthors()" class="text-gray-400 hover:text-black text-3xl">&times;</button>
+            </div>
+            
+            <div class="p-8 overflow-y-auto space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-lg text-gray-900">Michael Ghil</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Distinguished Professor at UCLA and ENS. A pioneer in climate dynamics and nonlinear sciences.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-lg text-gray-900">Alain Haraux</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Director of Research at CNRS. Expert in mathematical analysis and partial differential equations.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-lg text-gray-900">Jean Roux</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Renowned specialist in Numerical Analysis and its applications to environmental modeling.</p>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <div class="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4">
+                        <div class="h-12 w-12 springer-yellow rounded-full flex-shrink-0 flex items-center justify-center font-bold text-gray-900">NB</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Nicolás Bodnariuk</h4>
+                            <p class="text-sm text-gray-700 italic">Numerical Problems & Julia Implementations</p>
+                            <p class="text-sm text-gray-600 mt-2">Specialist in computational mathematics, responsible for the digital companion and numerical visualizations of the series.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
@@ -36,12 +77,12 @@
                     Explore digital resources, code implementations in Julia, and interactive visualizations designed to complement the Springer publication.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="contents.html" class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition shadow-lg inline-block">
-                        Explore the Book
-                    </a>
-                    <a href="#authors" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
+                    <button onclick="window.location.href='contents.html'" class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition shadow-lg">
+                        Explore Chapters
+                    </button>
+                    <button onclick="openAuthors()" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
                         About the Authors
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -52,17 +93,15 @@
                             Michael Ghil<br>Alain Haraux<br>Jean Roux
                         </p>
                     </div>
-                    
                     <div class="flex-grow flex flex-col justify-center p-6">
                         <h2 class="text-3xl font-black text-gray-900 leading-none mb-4">Mathematics for the Environment</h2>
                         <div class="h-1 w-12 bg-black"></div>
                     </div>
-
                     <div class="p-6 pt-0">
                         <p class="text-[9px] font-bold text-black/60 italic leading-tight border-t border-black/10 pt-4">
                             With numerical problems by<br>Nicolás Bodnariuk
                         </p>
-                        <p class="text-[10px] font-black mt-4 uppercase tracking-widest text-black/40">Springer</p>
+                        <p class="text-[10px] font-black mt-4 uppercase tracking-widest text-black/40 text-right">Springer</p>
                     </div>
                 </div>
             </div>
@@ -72,5 +111,21 @@
     <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
         <p>&copy; 2025 Mathematics for the Environment | Published by Springer</p>
     </footer>
+
+    <script>
+        function openAuthors() {
+            document.getElementById('authorModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeAuthors() {
+            document.getElementById('authorModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        // Cerrar al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            let modal = document.getElementById('authorModal');
+            if (event.target == modal) closeAuthors();
+        }
+    </script>
 </body>
 </html>
