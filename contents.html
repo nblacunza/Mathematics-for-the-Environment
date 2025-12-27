@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +13,19 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
                 Mathematics for the <span class="text-springer-yellow">Environment</span>
             </a>
-            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition">← Home</a>
+            <nav class="flex items-center space-x-6">
+                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Julia Code
+                </a>
+                <a href="contents.html" class="text-sm font-bold text-gray-900 transition uppercase tracking-widest font-black">Chapters</a>
+                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
+            </nav>
         </div>
     </header>
 
@@ -29,9 +36,9 @@
                 <div class="h-1.5 w-24 springer-yellow"></div>
             </div>
 
-            <div class="mb-8">
+            <div class="mb-16">
                 <h3 class="text-xl font-black text-gray-400 uppercase tracking-widest border-b pb-2 mb-8">Part I: Mathematical Tools</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                     
                     <a href="chapter1.html" class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-yellow-400">
                         <span class="text-xs text-springer-yellow font-black tracking-widest uppercase">Chapter 1</span>
@@ -48,7 +55,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 2</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Elementary Topology</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Topology of the real line • Metric spaces, distances, and norms • Completeness and convergence • Compactness and applications • Lipschitz continuity • Connectedness.
+                            Topology of the real line • Metric spaces, distances, and norms • Completeness and convergence • Compactness • Lipschitz continuity • Connectedness.
                         </p>
                     </div>
 
@@ -56,7 +63,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 3</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Linear Algebra and Applications</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Notation and conventions • Partitioning of square matrices • Orthogonal subspaces • Eigenvalues and eigenvectors • Matrix norms • Irreducible matrices • Analysis of the Google matrix.
+                            Notation and conventions • Square matrices • Orthogonal subspaces • Eigenvalues and eigenvectors • Matrix norms • Irreducible matrices • Google matrix analysis.
                         </p>
                     </div>
 
@@ -70,9 +77,9 @@
 
                     <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 5</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Computing Eigenvalues and Eigenvectors</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mt-2">Eigenvalues and Eigenvectors</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Stability and conditioning • The power method • Perron-Frobenius theorems • Givens-Householder bisection • LR Rutishauser and GR methods.
+                            Stability and conditioning • Power method • Perron-Frobenius theorems • Givens-Householder bisection • LR Rutishauser and GR methods.
                         </p>
                     </div>
 
@@ -80,7 +87,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 6</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Interpolation and Approximation</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Lagrange interpolation polynomials • Hermite interpolation • Spline function interpolation • Cubic splines definition and error • Akima's method.
+                            Lagrange polynomials • Hermite interpolation • Spline functions • Cubic splines definition and error • Akima's method for interpolation.
                         </p>
                     </div>
 
@@ -88,7 +95,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 7</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Numerical Integration Methods</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Riemann sums • Elementary quadrature • Lagrange and Newton-Cotes rules (Trapezoidal, Simpson) • Gaussian and Hermite quadrature formulas.
+                            Riemann sums • Elementary quadrature • Lagrange and Newton-Cotes rules (Trapezoidal, Simpson) • Gaussian and Hermite quadrature.
                         </p>
                     </div>
 
@@ -112,7 +119,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 10</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Numerically Solving ODEs</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            One-step methods • Euler-Cauchy and implicit methods • A-stability and stiff problems • Runge-Kutta methods • Multistep methods (Adams-Bashforth, Adams-Moulton).
+                            One-step methods • Euler-Cauchy and implicit methods • A-stability and stiff problems • Runge-Kutta methods • Multistep methods.
                         </p>
                     </div>
 
@@ -120,22 +127,21 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 11</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Elements of Topological Dynamics</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Stability in the sense of Lyapunov • Dissipativity and boundedness • Multiple equilibria and global attractors • Conservative systems • Structural stability.
+                            Lyapunov stability • Dissipativity and boundedness • Multiple equilibria and global attractors • Conservative systems • Structural stability.
                         </p>
                     </div>
-
                 </div>
             </div>
 
             <div class="mt-16">
                 <h3 class="text-xl font-black text-gray-400 uppercase tracking-widest border-b pb-2 mb-8">Part II: Applications to Climate and Ecology</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                     
                     <div class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 opacity-60">
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 12</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Basic Facts of the Climate Sciences</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Radiation balance and energy balance models (EBM) • Atmospheric processes • Oceans thermohaline circulation • Bistability and Hopf bifurcations.
+                            Radiation balance and energy balance models (EBM) • Atmospheric processes • Thermohaline circulation • Bistability and Hopf bifurcations.
                         </p>
                     </div>
 
@@ -143,7 +149,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 13</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Nonlinear Systems and Bifurcations</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Nonlinear planar ODE systems • Poincaré-Bendixson theorem • Equilibria in 2-D (nodes, saddles, foci) • Saddle-node, pitchfork and Hopf bifurcations.
+                            Nonlinear planar ODE systems • Poincaré-Bendixson theorem • Equilibria in 2-D (nodes, saddles, foci) • Saddle-node and pitchfork bifurcations.
                         </p>
                     </div>
 
@@ -151,7 +157,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 14</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Studying the Atmosphere and Oceans</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Quasi-geostrophic vorticity equations • Coupled atmosphere-ocean modes • Internal variability and routes to chaos • Lorenz convection model and deterministic chaos.
+                            Quasi-geostrophic vorticity equations • Coupled atmosphere-ocean modes • Internal variability and routes to chaos • Lorenz convection model.
                         </p>
                     </div>
 
@@ -159,7 +165,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 15</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Applications to Ecology</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Single population dynamics • Exponential, logistic and Gompertz models • Predation, competition and mutualism • Lotka-Volterra and Holling models • Lotka-Leslie age distribution.
+                            Single population dynamics • Exponential and logistic models • Predation and competition • Lotka-Volterra and Holling models • Age distribution.
                         </p>
                     </div>
 
@@ -167,7 +173,7 @@
                         <span class="text-xs text-gray-400 font-black tracking-widest uppercase">Chapter 16</span>
                         <h3 class="text-xl font-bold text-gray-900 mt-2">Numerical Bifurcations in Climate Models</h3>
                         <p class="text-gray-500 mt-4 text-xs leading-relaxed">
-                            Continuation methods • Pseudo-arclength and branch switching • Bifurcations in wind-driven ocean circulation • Shallow-water and primitive-equation models.
+                            Continuation methods • Pseudo-arclength and branch switching • Wind-driven ocean circulation • Shallow-water and primitive-equation models.
                         </p>
                     </div>
 
@@ -184,8 +190,12 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 py-10 text-center text-gray-400 text-sm">
-                <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+    <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+        <p class="mt-2 text-xs opacity-75">
+            For questions or feedback, contact me at: 
+            <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+        </p>
     </footer>
 </body>
 </html>
