@@ -10,64 +10,86 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
-        .modal-bg { background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(4px); }
+        .modal-bg { background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); }
+        
+        /* Custom Hover for ResearchGate without blues */
+        .author-link { position: relative; color: #111; transition: all 0.3s; }
+        .author-link:hover { color: #000; }
+        .author-link::after { 
+            content: ''; position: absolute; width: 0; height: 2px; 
+            bottom: -2px; left: 0; background-color: #FFC300; 
+            transition: width 0.3s; 
+        }
+        .author-link:hover::after { width: 100%; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
     <div id="authorModal" class="fixed inset-0 z-[100] hidden modal-bg flex items-center justify-center p-4" onclick="closeAuthors()">
-        <div class="bg-white w-full max-w-7xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
-            <div class="p-6 border-b flex justify-between items-center bg-gray-50">
-                <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight">About the Authors</h2>
-                <button onclick="closeAuthors()" class="text-gray-400 hover:text-black text-4xl leading-none">&times;</button>
+        <div class="bg-white w-full max-w-7xl max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
+            <div class="p-8 border-b flex justify-between items-center bg-gray-50/50">
+                <div class="flex items-center space-x-4">
+                    <div class="w-2 h-8 bg-gray-900"></div>
+                    <h2 class="text-3xl font-black text-gray-900 uppercase tracking-tighter">About the Authors</h2>
+                </div>
+                <button onclick="closeAuthors()" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-900 hover:bg-gray-900 hover:text-white transition-all text-2xl font-light">&times;</button>
             </div>
             
-            <div class="p-10 overflow-y-auto">
+            <div class="p-12 overflow-y-auto">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                    <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="fig_michael.jpg" alt="Michael Ghil" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/200x200?text=MG'">
-                        <div class="flex flex-col items-center flex-grow">
-                            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-widest mb-1">Author</span>
-                            <a href="https://www.researchgate.net/profile/Michael-Ghil" target="_blank" class="font-bold text-xl text-gray-900 hover:text-blue-600 transition-colors mb-3">Michael Ghil</a>
-                            <div class="min-h-[100px] flex items-start">
-                                <p class="text-sm text-gray-600 leading-relaxed px-2">Distinguished Professor at UCLA and ENS. A pioneer in climate dynamics and nonlinear sciences.</p>
-                            </div>
-                            <a href="https://www.researchgate.net/profile/Michael-Ghil" target="_blank" class="text-[10px] font-bold text-blue-500 uppercase tracking-tighter hover:underline mt-4 italic">ResearchGate ↗</a>
+                    
+                    <div class="group flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-springer-yellow rounded-full rotate-6 group-hover:rotate-0 transition-transform duration-500"></div>
+                            <img src="fig_michael.jpg" alt="Michael Ghil" class="relative w-44 h-44 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-4 border-white shadow-xl" onerror="this.src='https://placehold.co/200x200?text=MG'">
                         </div>
-                    </div>
-                    <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="fig_alain.jpeg" alt="Alain Haraux" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/200x200?text=AH'">
-                        <div class="flex flex-col items-center flex-grow">
-                            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-widest mb-1">Author</span>
-                            <a href="https://www.researchgate.net/profile/Alain-Haraux" target="_blank" class="font-bold text-xl text-gray-900 hover:text-blue-600 transition-colors mb-3">Alain Haraux</a>
-                            <div class="min-h-[100px] flex items-start">
-                                <p class="text-sm text-gray-600 leading-relaxed px-2">Director of Research at CNRS. Expert in mathematical analysis and partial differential equations.</p>
-                            </div>
-                            <a href="https://www.researchgate.net/profile/Alain-Haraux" target="_blank" class="text-[10px] font-bold text-blue-500 uppercase tracking-tighter hover:underline mt-4 italic">ResearchGate ↗</a>
+                        <span class="px-3 py-1 bg-gray-900 text-springer-yellow text-[9px] font-black uppercase tracking-widest rounded-full mb-4 shadow-sm">Author</span>
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight mb-3">Michael Ghil</h3>
+                        <div class="min-h-[100px] mb-4">
+                            <p class="text-sm text-gray-500 leading-relaxed font-medium">Distinguished Professor at UCLA and ENS. A world pioneer in climate dynamics and non-linear sciences.</p>
                         </div>
+                        <a href="https://www.researchgate.net/profile/Michael-Ghil" target="_blank" class="author-link text-[10px] font-black uppercase tracking-widest flex items-center">ResearchGate <span class="ml-1 text-xs">↗</span></a>
                     </div>
-                    <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="fig_jean.jpeg" alt="Jean Roux" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/200x200?text=JR'">
-                        <div class="flex flex-col items-center flex-grow">
-                            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-widest mb-1">Author</span>
-                            <a href="https://www.researchgate.net/profile/Jean-Roux" target="_blank" class="font-bold text-xl text-gray-900 hover:text-blue-600 transition-colors mb-3">Jean Roux</a>
-                            <div class="min-h-[100px] flex items-start">
-                                <p class="text-sm text-gray-600 leading-relaxed px-2">Renowned specialist in Numerical Analysis and its applications to environmental modeling.</p>
-                            </div>
-                            <a href="https://www.researchgate.net/profile/Jean-Roux" target="_blank" class="text-[10px] font-bold text-blue-500 uppercase tracking-tighter hover:underline mt-4 italic">ResearchGate ↗</a>
+
+                    <div class="group flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-springer-yellow rounded-full -rotate-6 group-hover:rotate-0 transition-transform duration-500"></div>
+                            <img src="fig_alain.jpeg" alt="Alain Haraux" class="relative w-44 h-44 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-4 border-white shadow-xl" onerror="this.src='https://placehold.co/200x200?text=AH'">
                         </div>
-                    </div>
-                    <div class="flex flex-col items-center text-center space-y-4">
-                        <img src="fig_nicolas.jpeg" alt="Nicolás Bodnariuk" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white ring-1 ring-gray-200" onerror="this.src='https://placehold.co/200x200?text=NB'">
-                        <div class="flex flex-col items-center flex-grow">
-                            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-widest mb-1">Numerical Problems</span>
-                            <a href="https://www.researchgate.net/profile/Nicolas-Bodnariuk" target="_blank" class="font-bold text-xl text-gray-900 hover:text-blue-600 transition-colors mb-3">Nicolás Bodnariuk</a>
-                            <div class="min-h-[100px] flex items-start">
-                                <p class="text-sm text-gray-600 leading-relaxed px-2 mb-2">Researcher in physical oceanography at CONICET, responsible for the digital companion and numerical problems.</p>
-                            </div>
-                            <a href="https://www.researchgate.net/profile/Nicolas-Bodnariuk" target="_blank" class="text-[10px] font-bold text-blue-500 uppercase tracking-tighter hover:underline mt-4 italic">ResearchGate ↗</a>
+                        <span class="px-3 py-1 bg-gray-900 text-springer-yellow text-[9px] font-black uppercase tracking-widest rounded-full mb-4 shadow-sm">Author</span>
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight mb-3">Alain Haraux</h3>
+                        <div class="min-h-[100px] mb-4">
+                            <p class="text-sm text-gray-500 leading-relaxed font-medium">Director of Research at CNRS. Leading expert in mathematical analysis and partial differential equations.</p>
                         </div>
+                        <a href="https://www.researchgate.net/profile/Alain-Haraux" target="_blank" class="author-link text-[10px] font-black uppercase tracking-widest flex items-center">ResearchGate <span class="ml-1 text-xs">↗</span></a>
                     </div>
+
+                    <div class="group flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-springer-yellow rounded-full rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                            <img src="fig_jean.jpeg" alt="Jean Roux" class="relative w-44 h-44 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-4 border-white shadow-xl" onerror="this.src='https://placehold.co/200x200?text=JR'">
+                        </div>
+                        <span class="px-3 py-1 bg-gray-900 text-springer-yellow text-[9px] font-black uppercase tracking-widest rounded-full mb-4 shadow-sm">Author</span>
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight mb-3">Jean Roux</h3>
+                        <div class="min-h-[100px] mb-4">
+                            <p class="text-sm text-gray-500 leading-relaxed font-medium">Specialist in Numerical Analysis. Renowned for his work in environmental and industrial modeling.</p>
+                        </div>
+                        <a href="https://www.researchgate.net/profile/Jean-Roux" target="_blank" class="author-link text-[10px] font-black uppercase tracking-widest flex items-center">ResearchGate <span class="ml-1 text-xs">↗</span></a>
+                    </div>
+
+                    <div class="group flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="absolute inset-0 bg-springer-yellow rounded-full -rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                            <img src="fig_nicolas.jpeg" alt="Nicolás Bodnariuk" class="relative w-44 h-44 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-4 border-white shadow-xl" onerror="this.src='https://placehold.co/200x200?text=NB'">
+                        </div>
+                        <span class="px-3 py-1 bg-gray-900 text-springer-yellow text-[9px] font-black uppercase tracking-widest rounded-full mb-4 shadow-sm">Numerical Problems</span>
+                        <h3 class="text-2xl font-black text-gray-900 leading-tight mb-3">Nicolás Bodnariuk</h3>
+                        <div class="min-h-[100px] mb-4">
+                            <p class="text-sm text-gray-500 leading-relaxed font-medium">Researcher in Physical Oceanography at CONICET. Developer of the digital companion and numerical models.</p>
+                        </div>
+                        <a href="https://www.researchgate.net/profile/Nicolas-Bodnariuk" target="_blank" class="author-link text-[10px] font-black uppercase tracking-widest flex items-center">ResearchGate <span class="ml-1 text-xs">↗</span></a>
+                    </div>
+
                 </div>
             </div>
         </div>
