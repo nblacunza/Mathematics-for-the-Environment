@@ -3,74 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1 - Solving nonlinear equations</title>
+    <title>Chapter 1 - Solving Nonlinear Equations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
-        .code-block { background-color: #1f2937; color: #d1d5db; border-radius: 0.5rem; padding: 1rem; overflow-x: auto; font-family: monospace; }
+        .code-block { background-color: #1f2937; color: #d1d5db; border-radius: 0.75rem; padding: 1.5rem; overflow-x: auto; font-family: 'Fira Code', monospace; font-size: 0.9rem; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
     </style>
 </head>
-<body>
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
                 Mathematics for the <span class="text-springer-yellow">Environment</span>
             </a>
-            <nav class="space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-gray-900 font-medium">Home</a>
+            <nav class="flex items-center space-x-6">
+                <a href="contents.html" class="text-gray-500 hover:text-gray-900 font-bold text-sm uppercase tracking-wider transition">Contents</a>
+                <a href="index.html" class="text-gray-500 hover:text-gray-900 font-bold text-sm uppercase tracking-wider transition">Home</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-10">
-        <div class="springer-yellow p-6 rounded-xl shadow-lg mb-8">
-            <h1 class="text-3xl font-bold text-gray-900 underline decoration-white decoration-4">Chapter 1: Solving nonlinear equations</h1>
-            <p class="text-gray-800 mt-2 font-medium">Numerical problems and Julia implementations</p>
+    <main class="max-w-5xl mx-auto px-6 py-12 flex-grow">
+        <div class="mb-12">
+            <div class="flex items-center space-x-4 mb-4">
+                <span class="bg-gray-900 text-white px-3 py-1 rounded text-xs font-black uppercase tracking-widest">Chapter 01</span>
+                <div class="h-px flex-grow bg-gray-200"></div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">Solving Nonlinear Equations</h1>
+            <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">
+                This chapter explores fundamental iterative methods used to solve energy balance models and other environmental equilibrium states.
+            </p>
+            <p class="text-sm text-gray-400 mt-4 italic font-medium">Numerical problems curated by Nicolás Bodnariuk</p>
         </div>
 
-        <section class="mb-10 p-6 bg-white rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold border-b-2 pb-2 mb-4 text-gray-700">1. Numerical problems</h2>
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-800">(i) Global temperature from Earth radiation balance</h3>
-                    <p class="text-gray-600 mt-1">Application of the secant, Picard and Newton methods.</p>
-                    <div class="flex space-x-2 mt-4">
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700">Formulation (.pdf)</button>
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700">Solution (.pdf)</button>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <div class="lg:col-span-2 space-y-12">
+                
+                <section>
+                    <h2 class="text-xl font-black text-gray-900 uppercase tracking-tighter mb-6 flex items-center">
+                        <span class="w-8 h-8 springer-yellow rounded-full flex items-center justify-center text-sm mr-3">1</span>
+                        Numerical Problems
+                    </h2>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition hover:shadow-md">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">(i) Global temperature from Earth radiation balance</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Application of the <strong>Secant, Picard, and Newton</strong> methods to determine the planetary equilibrium temperature. Includes error analysis and convergence rate comparison.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="flex items-center px-5 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-xs font-bold hover:bg-gray-200 transition">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                Formulation (.pdf)
+                            </button>
+                            <button class="flex items-center px-5 py-2.5 bg-blue-50 text-blue-600 rounded-lg text-xs font-bold hover:bg-blue-100 transition">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Full Solution (.pdf)
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-black text-gray-900 uppercase tracking-tighter mb-6 flex items-center">
+                        <span class="w-8 h-8 springer-yellow rounded-full flex items-center justify-center text-sm mr-3">2</span>
+                        Coding in Julia
+                    </h2>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-500 italic">Core implementation of the Secant algorithm:</p>
+                        <pre class="code-block">
+# Secant Method Implementation
+function secant_method(f, x0, x1; tol=1e-8, max_iter=100)
+    for i in 1:max_iter
+        fx0, fx1 = f(x0), f(x1)
+        # Avoid division by zero
+        x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0)
+        
+        if abs(x2 - x1) < tol
+            return x2 # Root found
+        end
+        x0, x1 = x1, x2
+    end
+    error("Method did not converge after $max_iter iterations")
+end</pre>
+                    </div>
+                </section>
+            </div>
+
+            <div class="lg:col-span-1">
+                <div class="sticky top-24">
+                    <div class="bg-gray-900 rounded-3xl p-8 text-white shadow-2xl overflow-hidden relative group">
+                        <div class="absolute -right-4 -top-4 w-24 h-24 springer-yellow rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
+                        
+                        <h2 class="text-2xl font-black mb-4 relative z-10 leading-tight">Interactive Visualizations</h2>
+                        <p class="text-gray-400 text-sm mb-8 relative z-10">
+                            See how the 2D Newton-Raphson method finds roots through 8 iterative steps in a multi-dimensional space.
+                        </p>
+                        
+                        <a href="newton2d.html" class="block w-full py-4 bg-springer-yellow text-gray-900 text-center rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white transition-colors relative z-10">
+                            Open Newton 2D Tool →
+                        </a>
+
+                        <div class="mt-8 pt-8 border-t border-gray-800">
+                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest mb-2">Algorithm highlights</p>
+                            <ul class="text-xs text-gray-300 space-y-2">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-2"></span> Jacobian Matrix</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-2"></span> Local Convergence</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-2"></span> Iterative Progress</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="mb-10 p-6 bg-white rounded-lg shadow-md border-t-8 border-gray-800">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-700">2. Coding in Julia</h2>
-            <p class="mb-4 text-gray-600 italic">Example: The Secant Method Implementation</p>
-            <pre class="code-block">
-function secant_method(f, x0, x1; tol=1e-8, max_iter=100)
-    for _ in 1:max_iter
-        fx0, fx1 = f(x0), f(x1)
-        x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0)
-        if abs(x2 - x1) < tol; return x2; end
-        x0, x1 = x1, x2
-    end
-    error("Did not converge")
-end</pre>
-        </section>
-
-        <section class="mb-10 p-8 bg-gray-900 text-white rounded-xl flex flex-col items-center text-center shadow-xl">
-            <h2 class="text-2xl font-bold mb-4">Visual Methodology</h2>
-            <p class="text-gray-400 mb-6 max-w-2xl">Discover how the Newton-Raphson 2D method converges through our step-by-step visual sequence.</p>
-            <a href="newton2d.html" class="bg-springer-yellow text-gray-900 px-8 py-3 rounded-lg font-bold hover:scale-105 transition duration-200">
-                View Newton 2D Visualizations →
-            </a>
-        </section>
+        </div>
     </main>
 
-    <footer class="bg-gray-100 border-t py-6 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 Mathematics for the Environment</p>
+    <footer class="bg-white border-t py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-400 font-medium tracking-wide">
+                © 2025 Mathematics for the Environment | Digital Edition companion for Springer.
+            </p>
+        </div>
     </footer>
+
 </body>
 </html>
