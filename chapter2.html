@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Elementary Topology - M4E</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .springer-yellow { background-color: #FFC300; }
+        .text-springer-yellow { color: #FFC300; }
+        .code-block { background-color: #1e1e1e; color: #d4d4d4; padding: 1.5rem; border-radius: 1rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; overflow-x: auto; border: 1px solid #333; }
+        .method-card:hover { border-color: #FFC300; transform: translateY(-4px); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
+            </a>
+            <nav class="flex items-center space-x-6">
+                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Julia Code
+                </a>
+                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest font-black">Chapters</a>
+                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow">
+        
+        <section class="mb-16">
+            <div class="mb-8 text-left">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Digital Resources</span>
+                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 uppercase tracking-tighter leading-none">Elementary Topology</h1>
+                <div class="h-1.5 w-32 springer-yellow mb-8"></div>
+                <p class="text-xl text-gray-700 leading-relaxed max-w-4xl">
+                    Before diving into complex dynamics, we must define the "space" where our models live. Topology provides the rigorous framework to discuss limits, continuity, and the proximity of environmental states in multidimensional systems.
+                </p>
+            </div>
+
+            <div class="my-10 p-6 bg-white rounded-3xl border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-4">
+                    <div class="flex space-x-1">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">
+                        "Mathematics is the art of giving the same name to different things." Explore the structures of metric spaces and norms in <strong>Julia</strong>.
+                    </p>
+                </div>
+                <a href="julia.html" class="bg-gray-900 text-white text-xs font-black px-6 py-3 rounded-full uppercase tracking-widest hover:bg-gray-700 transition">
+                    Why Julia?
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900">The Geometry of Stability</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        To understand if a climate equilibrium is "stable", we need to define what it means to be "near" that equilibrium. This chapter reviews the topology of the real line and extends it to general metric spaces, setting the stage for studying global attractors.
+                    </p>
+                    <div class="bg-yellow-50 p-6 rounded-2xl border-l-4 border-springer-yellow">
+                        <p class="text-sm text-gray-700 italic">
+                            <strong>Didactic Note:</strong> Metrics and norms are not just abstract definitions; they are the yardsticks we use to measure the error in our numerical simulations and the convergence of our algorithms.
+                        </p>
+                    </div>
+                </div>
+                <div class="aspect-video bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 group hover:border-springer-yellow transition-all overflow-hidden relative">
+                    <span class="text-gray-400 font-bold group-hover:text-springer-yellow text-center px-6">
+                        
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-10 border-b pb-4">Key Topological Concepts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="method-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900">Metric Spaces</h3>
+                    <p class="text-sm text-gray-500 mt-4 flex-grow leading-relaxed">
+                        Defining distance rigorously. From the Euclidean distance to more abstract metrics used in functional analysis for climate modeling.
+                    </p>
+                    <div class="my-6 h-32 bg-gray-50 rounded-xl border flex items-center justify-center text-[10px] text-gray-400 font-black uppercase">
+                        
+                    </div>
+                    <a href="metric-spaces.html" class="text-xs font-black text-blue-600 uppercase hover:underline inline-flex items-center">
+                        Explore Concepts <span class="ml-1">→</span>
+                    </a>
+                </div>
+
+                <div class="method-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900">Norms & Vectors</h3>
+                    <p class="text-sm text-gray-500 mt-4 flex-grow leading-relaxed">
+                        Measuring the "size" of vectors. Comparison between $L^1$, $L^2$, and $L^\infty$ norms and their implications in numerical stability.
+                    </p>
+                    <div class="my-6 h-32 bg-gray-50 rounded-xl border flex items-center justify-center text-[10px] text-gray-400 font-black uppercase">
+                        
+                    </div>
+                    <a href="norms.html" class="text-xs font-black text-blue-600 uppercase hover:underline inline-flex items-center">
+                        Explore Concepts <span class="ml-1">→</span>
+                    </a>
+                </div>
+
+                <div class="method-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900">Compactness</h3>
+                    <p class="text-sm text-gray-500 mt-4 flex-grow leading-relaxed">
+                        The property that guarantees the existence of extrema. Essential for optimization and proving the existence of attractors in dynamical systems.
+                    </p>
+                    <div class="my-6 h-32 bg-gray-50 rounded-xl border flex items-center justify-center text-[10px] text-gray-400 font-black uppercase">
+                        
+                    </div>
+                    <a href="compactness.html" class="text-xs font-black text-blue-600 uppercase hover:underline inline-flex items-center">
+                        Explore Concepts <span class="ml-1">→</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-8">Julia Implementation</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Calculating Vector Norms</span>
+                    <pre class="code-block">
+using LinearAlgebra
+
+x = [3.0, -4.0, 0.0]
+
+# Standard Euclidean Norm (L2)
+norm_l2 = norm(x) 
+
+# Manhattan Norm (L1)
+norm_l1 = norm(x, 1)
+
+# Infinity Norm (Max)
+norm_inf = norm(x, Inf)</pre>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Custom Metric Definition</span>
+                    <pre class="code-block">
+# Define a custom distance function
+function environmental_dist(u, v, weight)
+    # Weighted Euclidean distance
+    return sqrt(sum(weight .* (u .- v).^2))
+end
+
+dist = environmental_dist([20, 10], [21, 11], [1.0, 0.5])</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-900 rounded-[3rem] p-12 text-white shadow-2xl">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl font-black mb-8 uppercase tracking-tight">Numerical Exercises</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-springer-yellow pl-6">
+                            <h4 class="font-bold text-xl mb-2">2.1 Distance Comparison</h4>
+                            <p class="text-sm text-gray-400">Evaluate how different norms affect the perceived "distance" between two climate states in a high-dimensional model.</p>
+                            <a href="exercises/2-1.html" class="mt-4 inline-block text-[10px] font-black uppercase tracking-widest text-springer-yellow hover:text-white transition">View Exercise ↗</a>
+                        </div>
+                        <div class="border-l-4 border-gray-700 pl-6">
+                            <h4 class="font-bold text-xl mb-2">2.2 Boundary Points</h4>
+                            <p class="text-sm text-gray-400">Identifying interior and boundary points in multidimensional ecological niche models.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700">
+                        <h4 class="text-springer-yellow font-black uppercase tracking-tighter mb-4">New Digital Content</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                            Visualizing "Neighborhoods" and Convergence: Interactive plots showing how sequences approach limits in different metric spaces.
+                        </p>
+                        <span class="text-[10px] bg-gray-700 px-3 py-1 rounded-full text-gray-400 font-bold uppercase tracking-widest">In Development</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2026 Mathematics for the Environment | Digital Edition by N. Bodnariuk</p>
+        <p class="mt-2 text-xs opacity-75">
+            Contact: <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
