@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newton 2D Convergence - Visualizations</title>
+    <title>Newton 2D Visualizations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
-        .text-springer-yellow { color: #FFC300; }
-        
-        /* Estilo para el modal de imagen */
         #imageModal.active { display: flex; animation: fadeIn 0.3s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -19,106 +16,76 @@
 <body class="min-h-screen flex flex-col">
 
     <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/95 items-center justify-center p-4 cursor-zoom-out" onclick="closeModal()">
-        <button class="absolute top-6 right-6 text-white text-4xl hover:text-springer-yellow transition">&times;</button>
-        <img id="modalImg" class="max-w-full max-h-[90vh] rounded shadow-2xl transition-transform duration-300 scale-95" src="" alt="Full size visualization">
+        <img id="modalImg" class="max-w-full max-h-[90vh] rounded shadow-2xl transition-transform duration-300 scale-95" src="">
     </div>
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <a href="chapter1.html" class="text-gray-400 hover:text-gray-900 transition flex items-center text-sm font-bold">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    CHAPTER 1
-                </a>
-                <span class="text-gray-200">|</span>
-                <span class="text-sm font-black uppercase tracking-widest text-gray-900">Newton 2D Visualizer</span>
-            </div>
-            <a href="index.html" class="h-8 w-8 springer-yellow rounded flex items-center justify-center shadow-sm">
-                <span class="text-[10px] font-black">M.E.</span>
-            </a>
+            <a href="chapter1.html" class="text-gray-500 hover:text-black font-bold text-sm">← Back to Chapter 1</a>
+            <span class="text-sm font-black uppercase tracking-widest text-gray-900">Newton 2D Convergence</span>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 py-12 flex-grow">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-            <div class="lg:col-span-2">
-                <h1 class="text-5xl font-black text-gray-900 leading-tight mb-6 tracking-tighter">
-                    Iterative Progress: <br><span class="text-gray-400 italic">2D Newton-Raphson Method</span>
-                </h1>
-                <p class="text-lg text-gray-600 leading-relaxed italic">
-                    Visual monitoring of the convergence path towards the system root. Each figure represents an iteration where the Jacobian matrix linearizes the nonlinear field.
-                </p>
-            </div>
-            <div class="lg:col-span-1 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 class="font-bold text-gray-900 mb-2 uppercase text-xs tracking-widest">Mathematical Basis</h3>
-                <p class="text-sm text-gray-500 mb-4">The update rule for a system of equations $F(\mathbf{x}) = 0$ is defined as:</p>
-                <div class="bg-gray-50 p-4 rounded-lg text-sm font-mono text-gray-800 text-center mb-2">
-                    $\mathbf{x}_{n+1} = \mathbf{x}_n - J_F(\mathbf{x}_n)^{-1} F(\mathbf{x}_n)$
-                </div>
-                <p class="text-[11px] text-gray-400 leading-tight">Where $J_F$ is the Jacobian matrix of the system.</p>
-            </div>
+    <main class="max-w-5xl mx-auto px-6 py-12 flex-grow">
+        <div class="mb-12">
+            <h1 class="text-4xl font-black text-gray-900 mb-2 uppercase tracking-tight tracking-tighter">Iterative Progress</h1>
+            <p class="text-gray-600">Visual monitoring of the 2D Newton-Raphson method across 8 iterations.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <script>
-                for(let i=1; i<=8; i++) {
-                    document.write(`
-                        <div class="group cursor-pointer" onclick="openModal('Newton_2D_fig_${i}.png')">
-                            <div class="bg-white p-2 rounded-2xl shadow-sm border border-gray-100 group-hover:border-springer-yellow group-hover:shadow-xl transition-all duration-300">
-                                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-50">
-                                    <img src="Newton_2D_fig_${i}.png" 
-                                         alt="Iteration ${i}" 
-                                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                         onerror="this.src='https://placehold.co/800x600/f3f4f6/9ca3af?text=Iteration+${i}'">
-                                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
-                                    <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-sm">
-                                        <span class="text-[10px] font-black text-gray-900 uppercase">Step 0${i}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4 px-2 flex justify-between items-center">
-                                <h4 class="font-bold text-gray-900 text-sm italic">Newton Iteration ${i}</h4>
-                                <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Visual Data</span>
-                            </div>
-                        </div>
-                    `);
-                }
-            </script>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_1.png')">
+                <img src="Newton_2D_fig_1.png" alt="Iteration 1" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+1'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 1</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_2.png')">
+                <img src="Newton_2D_fig_2.png" alt="Iteration 2" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+2'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 2</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_3.png')">
+                <img src="Newton_2D_fig_3.png" alt="Iteration 3" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+3'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 3</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_4.png')">
+                <img src="Newton_2D_fig_4.png" alt="Iteration 4" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+4'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 4</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_5.png')">
+                <img src="Newton_2D_fig_5.png" alt="Iteration 5" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+5'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 5</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_6.png')">
+                <img src="Newton_2D_fig_6.png" alt="Iteration 6" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+6'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 6</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_7.png')">
+                <img src="Newton_2D_fig_7.png" alt="Iteration 7" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+7'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 7</h3>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm border-b-4 border-springer-yellow cursor-pointer hover:shadow-lg transition" onclick="openModal('Newton_2D_fig_8.png')">
+                <img src="Newton_2D_fig_8.png" alt="Iteration 8" class="w-full h-auto rounded-lg mb-4" onerror="this.src='https://placehold.co/600x400?text=Iteration+8'">
+                <h3 class="font-bold text-center text-gray-700 uppercase text-xs">Iteration 8</h3>
+            </div>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <p class="text-xs font-bold uppercase tracking-widest text-springer-yellow mb-2">Developed for Numerical Analysis</p>
-                <p class="text-gray-400 text-sm italic">Credit: Numerical Problems by Nicolás Bodnariuk</p>
-            </div>
-            <a href="chapter1.html" class="px-8 py-3 bg-white text-gray-900 rounded-full font-bold hover:bg-springer-yellow transition duration-300">
-                Return to Chapter 1
-            </a>
-        </div>
+    <footer class="bg-gray-900 py-8 text-center text-gray-500 text-sm">
+        <p>Numerical Problems by Nicolás Bodnariuk</p>
     </footer>
 
     <script>
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImg');
-
         function openModal(src) {
             modal.classList.add('active');
             modalImg.src = src;
             setTimeout(() => { modalImg.style.transform = "scale(1)"; }, 10);
             document.body.style.overflow = 'hidden';
         }
-
         function closeModal() {
             modalImg.style.transform = "scale(0.95)";
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-
-        // Cerrar con tecla ESC
-        document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
     </script>
-
 </body>
 </html>
