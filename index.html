@@ -1,4 +1,21 @@
-<div id="authorModal" class="fixed inset-0 z-[100] hidden modal-bg flex items-center justify-center p-4" onclick="closeAuthors()">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics for the Environment - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .springer-yellow { background-color: #FFC300; }
+        .text-springer-yellow { color: #FFC300; }
+        .modal-bg { background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(4px); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div id="authorModal" class="fixed inset-0 z-[100] hidden modal-bg flex items-center justify-center p-4" onclick="closeAuthors()">
         <div class="bg-white w-full max-w-7xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
             <div class="p-6 border-b flex justify-between items-center bg-gray-50">
                 <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight">About the Authors</h2>
@@ -60,3 +77,78 @@
             </div>
         </div>
     </div>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16 flex-grow flex items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+            <div>
+                <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Digital Companion</span>
+                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-4 leading-tight">
+                    Mathematics for the <br><span class="text-springer-yellow px-2">Environment</span>
+                </h1>
+                <p class="text-gray-500 font-medium mb-6 text-lg">
+                    M. Ghil • A. Haraux • J. Roux <br>
+                    <span class="text-gray-400 text-sm italic font-normal">With numerical problems by N. Bodnariuk</span>
+                </p>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Explore digital resources, <strong>new numerical exercises</strong>, code implementations in Julia, and interactive visualizations designed to complement the Springer publication.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="window.location.href='contents.html'" class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition shadow-lg">
+                        Explore Chapters
+                    </button>
+                    <button onclick="openAuthors()" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+                        About the Authors
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="springer-yellow rounded-r-2xl w-full max-w-xs aspect-[3/4] flex flex-col shadow-2xl rotate-2 transition-transform hover:rotate-0 duration-500 border-l-8 border-black/10 overflow-hidden">
+                    <div class="p-6 pb-0 text-left">
+                        <p class="text-[10px] font-black uppercase tracking-tighter text-black/80 leading-tight">
+                            Michael Ghil<br>Alain Haraux<br>Jean Roux
+                        </p>
+                    </div>
+                    <div class="flex-grow flex flex-col justify-center p-6 text-left">
+                        <h2 class="text-3xl font-black text-gray-900 leading-none mb-4">Mathematics for the Environment</h2>
+                        <div class="h-1 w-12 bg-black"></div>
+                    </div>
+                    <div class="p-6 pt-0 text-right md:text-left">
+                        <p class="text-[9px] font-bold text-black/60 italic leading-tight border-t border-black/10 pt-4">
+                            With numerical problems by<br><span class="font-black text-black text-[10px]">Nicolás Bodnariuk</span>
+                        </p>
+                        <p class="text-[10px] font-black mt-4 uppercase tracking-widest text-black/40 text-right">Springer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+        <p class="mt-2 text-xs opacity-75">
+            For questions or feedback, contact me at: 
+            <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        function openAuthors() {
+            document.getElementById('authorModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeAuthors() {
+            document.getElementById('authorModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
