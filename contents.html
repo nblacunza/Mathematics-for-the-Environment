@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents - Newton 2D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .springer-yellow { background-color: #FFC300; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-black transition">← Back to Cover</a>
+            <div class="h-8 w-8 springer-yellow rounded-sm shadow-sm"></div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-16">
+        <h1 class="text-4xl font-black text-gray-900 mb-2 uppercase tracking-tight">Table of Contents</h1>
+        <p class="text-gray-500 mb-12">Click on a chapter to explore the visualizations.</p>
+
+        <div class="space-y-4">
+            <a href="visualizations.html" class="group flex items-center justify-between p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-yellow-400 transition-all">
+                <div class="flex items-center space-x-6">
+                    <span class="text-3xl font-black text-gray-200 group-hover:text-yellow-500 transition">01</span>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-lg">Newton 2D Convergence</h3>
+                        <p class="text-sm text-gray-500">8-Step iterative progress and graphical analysis.</p>
+                    </div>
+                </div>
+                <span class="text-gray-300 group-hover:translate-x-2 transition-transform">→</span>
+            </a>
+
+            <div class="opacity-50 flex items-center justify-between p-6 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                <div class="flex items-center space-x-6">
+                    <span class="text-3xl font-black text-gray-300">02</span>
+                    <div>
+                        <h3 class="font-bold text-gray-400 text-lg">Root Finding Algorithms</h3>
+                        <p class="text-sm text-gray-400 italic">Coming soon</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="opacity-50 flex items-center justify-between p-6 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                <div class="flex items-center space-x-6">
+                    <span class="text-3xl font-black text-gray-300">03</span>
+                    <div>
+                        <h3 class="font-bold text-gray-400 text-lg">Jacobian Matrices</h3>
+                        <p class="text-sm text-gray-400 italic">Coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
