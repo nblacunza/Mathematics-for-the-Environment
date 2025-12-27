@@ -25,23 +25,44 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
             <div>
                 <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Digital Companion</span>
-                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 leading-tight">
+                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-4 leading-tight">
                     Mathematics for the <br><span class="text-springer-yellow px-2">Environment</span>
                 </h1>
+                <p class="text-gray-500 font-medium mb-6">
+                    M. Ghil • A. Haraux • J. Roux <br>
+                    <span class="text-gray-400 text-sm italic">With numerical problems by N. Bodnariuk</span>
+                </p>
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
                     Explore digital resources, code implementations in Julia, and interactive visualizations designed to complement the Springer publication.
                 </p>
-                <a href="contents.html" class="bg-gray-900 text-white px-10 py-4 rounded-full font-bold hover:bg-gray-800 transition shadow-lg inline-block">
-                    Explore the Book
-                </a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="contents.html" class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition shadow-lg inline-block">
+                        Explore the Book
+                    </a>
+                    <a href="#authors" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
+                        About the Authors
+                    </a>
+                </div>
             </div>
 
             <div class="flex justify-center">
-                <div class="springer-yellow rounded-2xl w-full max-w-xs aspect-[3/4] flex items-center justify-center shadow-2xl rotate-2 transition-transform hover:rotate-0 duration-500">
-                    <div class="text-center p-8 border-l-8 border-black/10 h-full w-full flex flex-col justify-center">
-                        <p class="text-xs font-black uppercase tracking-tighter mb-4 opacity-60 text-black">Springer Series</p>
-                        <h2 class="text-3xl font-black text-gray-900 leading-none mb-2">Mathematics for the Environment</h2>
-                        <div class="mt-8 h-1 w-12 bg-black mx-auto"></div>
+                <div class="springer-yellow rounded-r-2xl w-full max-w-xs aspect-[3/4] flex flex-col shadow-2xl rotate-2 transition-transform hover:rotate-0 duration-500 border-l-8 border-black/10 overflow-hidden">
+                    <div class="p-6 pb-0">
+                        <p class="text-[10px] font-black uppercase tracking-tighter text-black/80 leading-tight">
+                            Michael Ghil<br>Alain Haraux<br>Jean Roux
+                        </p>
+                    </div>
+                    
+                    <div class="flex-grow flex flex-col justify-center p-6">
+                        <h2 class="text-3xl font-black text-gray-900 leading-none mb-4">Mathematics for the Environment</h2>
+                        <div class="h-1 w-12 bg-black"></div>
+                    </div>
+
+                    <div class="p-6 pt-0">
+                        <p class="text-[9px] font-bold text-black/60 italic leading-tight border-t border-black/10 pt-4">
+                            With numerical problems by<br>Nicolás Bodnariuk
+                        </p>
+                        <p class="text-[10px] font-black mt-4 uppercase tracking-widest text-black/40">Springer</p>
                     </div>
                 </div>
             </div>
