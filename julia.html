@@ -3,161 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Julia? - Mathematics for the Environment</title>
+    <title>Julia Engine - Mathematics for the Environment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap');
-        
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
-        .julia-purple { color: #9558b2; }
-        .julia-green { color: #389826; }
-        .julia-red { color: #cb3c33; }
         .springer-yellow { background-color: #FFC300; }
-        .code-font { font-family: 'Fira Code', monospace; }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+        .text-springer-yellow { color: #FFC300; }
+        .code-block { background-color: #1e1e1e; color: #d4d4d4; padding: 1.5rem; border-radius: 1rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; border: 1px solid #333; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
-                Mathematics for the <span class="text-[#FFC300]">Environment</span>
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
             </a>
-            <nav class="space-x-6">
-                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition">Home</a>
-                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition">Chapters</a>
+            <nav class="flex items-center space-x-6">
+                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Chapters</a>
+                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
             </nav>
         </div>
     </header>
 
-    <main class="flex-grow">
-        <section class="py-20 bg-white border-b overflow-hidden relative">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="flex space-x-2 mb-6">
-                        <span class="w-3 h-3 rounded-full bg-[#cb3c33]"></span>
-                        <span class="w-3 h-3 rounded-full bg-[#389826]"></span>
-                        <span class="w-3 h-3 rounded-full bg-[#9558b2]"></span>
-                    </div>
-                    <h1 class="text-6xl font-black text-gray-900 tracking-tighter leading-none mb-6">
-                        The Speed of C. <br>
-                        <span class="text-gray-400">The Ease of Python.</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 leading-relaxed mb-8">
-                        Julia es el lenguaje de programación de alto rendimiento diseñado para la computación científica. En este libro, es el motor que da vida a los modelos climáticos y ecológicos.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://julialang.org" target="_blank" class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition shadow-lg">
-                            Official Julia Website ↗
-                        </a>
-                        <a href="#why-in-book" class="border-2 border-gray-200 text-gray-600 px-8 py-3 rounded-full font-bold hover:bg-gray-50 transition">
-                            Why in this book?
-                        </a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-tr from-red-100 via-green-100 to-purple-100 rounded-full blur-3xl opacity-50"></div>
-                    <div class="relative glass-card p-8 rounded-3xl shadow-2xl border border-gray-100">
-                        <div class="flex justify-between items-center mb-4 border-b pb-4">
-                            <span class="text-xs font-black text-gray-400 uppercase tracking-widest">Performance Comparison</span>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between text-xs font-bold mb-1"><span>JULIA</span> <span>1.0x</span></div>
-                                <div class="h-4 w-full bg-green-500 rounded-full shadow-inner"></div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-xs font-bold mb-1"><span>C / FORTRAN</span> <span>1.1x</span></div>
-                                <div class="h-4 w-[90%] bg-gray-300 rounded-full"></div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-xs font-bold mb-1"><span>PYTHON / R</span> <span>20x - 50x</span></div>
-                                <div class="h-4 w-[20%] bg-red-400 rounded-full"></div>
-                            </div>
-                        </div>
-                        <p class="mt-6 text-[10px] text-gray-400 italic text-center">Benchmarks based on typical scientific computing tasks.</p>
-                    </div>
-                </div>
+    <main class="max-w-4xl mx-auto px-6 py-16 flex-grow">
+        
+        <section class="mb-16">
+            <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Computing the Universe</span>
+            <h1 class="text-5xl font-black text-gray-900 mt-2 mb-8 uppercase tracking-tighter">Julia Engine</h1>
+            
+            <div class="prose prose-lg text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Como se menciona en el libro, <em>"la filosofía está escrita en este grandísimo libro que continuamente está abierto ante nuestros ojos... pero no se puede entender si primero no se aprende a entender la lengua"</em>. En el contexto de la modelización ambiental moderna, esa lengua es matemática, pero su ejecución requiere una herramienta capaz de traducir la teoría en simulaciones de alto rendimiento.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 pt-4">¿Por qué Julia?</h3>
+                <p>
+                    La elección de Julia para los problemas numéricos de esta obra no es arbitraria. Responde a la necesidad de resolver el **"problema de los dos lenguajes"**: la capacidad de escribir código que sea tan fácil de leer como Python pero tan rápido como Fortran o C.
+                </p>
+
+                <ul class="space-y-4 list-none pl-0">
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">01</span>
+                        <span><strong>Rendimiento para Dinámicas Caóticas:</strong> La resolución de sistemas de ecuaciones no lineales y fluidos geofísicos requiere una eficiencia computacional que solo la compilación Just-In-Time (JIT) de Julia puede ofrecer para procesos iterativos complejos.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">02</span>
+                        <span><strong>Sintaxis Matemática:</strong> Permite una correspondencia casi directa entre las fórmulas del texto y el código, facilitando la implementación de métodos como Newton-Raphson o la integración de ODEs.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">03</span>
+                        <span><strong>Ecosistema Científico:</strong> El uso de librerías como <code>DifferentialEquations.jl</code> es estándar en la investigación actual de sistemas dinámicos y geociencias.</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <section id="why-in-book" class="py-20 max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-gray-900 uppercase tracking-tighter">Why Julia for the Environment?</h2>
-                <div class="h-1.5 w-24 springer-yellow mx-auto mt-4"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="space-y-4">
-                    <div class="text-4xl">⚡</div>
-                    <h3 class="text-xl font-bold text-gray-900">Solving the Two-Language Problem</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Tradicionalmente, los científicos usan Python para prototipar y C++ para ejecutar. Julia elimina esta barrera: escribes código legible que corre a velocidades nativas, crucial para simulaciones de larga duración como las de este libro.
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <div class="text-4xl">🔬</div>
-                    <h3 class="text-xl font-bold text-gray-900">Mathematical Syntax</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Julia permite usar símbolos griegos y notación matemática real ($\nabla, \alpha, \sum$). Esto hace que el código sea casi idéntico a las ecuaciones del libro, facilitando la comprensión de los alumnos.
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <div class="text-4xl">🌎</div>
-                    <h3 class="text-xl font-bold text-gray-900">Ecosystem for Models</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Desde resolver Ecuaciones Diferenciales Ordinarias (ODEs) hasta simulaciones climáticas complejas, el ecosistema de Julia (como <i>DifferentialEquations.jl</i>) es el más avanzado del mundo.
-                    </p>
-                </div>
+        <section class="mb-20">
+            <h2 class="text-xl font-black text-gray-900 uppercase tracking-tight mb-6 border-b pb-2">Implementation Preview</h2>
+            <div class="space-y-4">
+                <p class="text-sm text-gray-500 italic">Ejemplo de una iteración de punto fijo para encontrar equilibrios climáticos:</p>
+                <pre class="code-block">
+# Simple Picard Iteration for Climate Equilibria
+function solve_balance(f, x0; tol=1e-8, max_iter=100)
+    x = x0
+    for i in 1:max_iter
+        x_new = f(x)
+        if abs(x_new - x) < tol
+            return x_new, i # Converged
+        end
+        x = x_new
+    end
+    return nothing
+end</pre>
             </div>
         </section>
 
-        <section class="py-20 bg-gray-900 text-white">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl font-black mb-6 uppercase tracking-tight">Escribe como un matemático, corre como un ingeniero.</h2>
-                    <p class="text-gray-400 mb-8">
-                        Observa cómo la implementación del método de Newton en Julia (Capítulo 1) mantiene una pureza sintáctica increíble mientras el compilador JIT (Just-In-Time) optimiza cada ciclo.
-                    </p>
-                    <div class="p-6 bg-gray-800 rounded-2xl border border-gray-700 italic text-sm text-gray-300">
-                        "En el libro, Nicolás Bodnariuk ha diseñado estos scripts para que sean el puente entre la teoría del PDF y la realidad computacional."
-                    </div>
-                </div>
-                <div class="bg-[#1e1e1e] p-6 rounded-2xl shadow-2xl border border-gray-700 code-font">
-                    <div class="flex space-x-2 mb-6">
-                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                    </div>
-                    <pre class="text-sm leading-relaxed text-gray-400">
-<span class="julia-purple">using</span> LinearAlgebra
-
-<span class="text-gray-500"># Implementación del Libro - Cap 1</span>
-<span class="julia-purple">function</span> <span class="julia-green">newton_step</span>(F, J, x)
-    Δx = J(x) \ F(x) <span class="text-gray-500"># Resolución eficiente</span>
-    <span class="julia-purple">return</span> x - Δx
-<span class="julia-purple">end</span>
-
-<span class="text-gray-500"># ¡Soporta símbolos reales!</span>
-α = 0.5
-Σ_val = sum(data)</pre>
-                </div>
+        <section class="bg-gray-900 rounded-3xl p-10 text-white shadow-xl">
+            <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Ready to simulate?</h3>
+            <p class="text-gray-400 mb-8 leading-relaxed">
+                Todos los problemas numéricos propuestos por Nicolás Bodnariuk en los tomos I y II están disponibles como notebooks ejecutables.
+            </p>
+            <div class="flex gap-4">
+                <a href="https://github.com/" target="_blank" class="bg-white text-gray-900 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-springer-yellow transition">
+                    GitHub Repository
+                </a>
+                <a href="contents.html" class="border border-gray-700 text-gray-400 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:text-white hover:border-white transition">
+                    Back to Chapters
+                </a>
             </div>
         </section>
+
     </main>
 
-    <footer class="springer-yellow py-8 text-center text-gray-800 text-sm font-medium">
-        <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2026 Mathematics for the Environment | Digital Edition</p>
         <p class="mt-2 text-xs opacity-75">
-            For any inquiries, please contact me at: 
-            <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+            Numerical Problems by <span class="font-bold">Nicolás Bodnariuk</span>
         </p>
     </footer>
 
