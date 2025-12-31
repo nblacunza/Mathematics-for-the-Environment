@@ -39,7 +39,7 @@
                 <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 uppercase tracking-tighter leading-none">Solving Nonlinear Equations</h1>
                 <div class="h-1.5 w-32 springer-yellow mb-8"></div>
                 <p class="text-xl text-gray-700 leading-relaxed max-w-4xl">
-                    Numerical analysis is the study of algorithms that use numerical approximation for the problems of mathematical analysis. This chapter focuses on finding roots of equations where an exact algebraic solution is impossible—a fundamental challenge when modeling the Earth's energy balance.
+                    This chapter focuses on finding roots of equations where an exact algebraic solution is impossible—a fundamental challenge in practical applications.
                 </p>
             </div>
 
@@ -63,7 +63,7 @@
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-gray-900">Numerical Methods Approach</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        In environmental sciences, we often deal with "equilibria"—states where the net energy change is zero. Mathematically, this means solving $f(x) = 0$. We start with simple interval-halving and move towards high-speed iterative shoots.
+                        In climate science, we very often need to find where a function crosses zero (i.e., solve <em>f(x) = 0</em>). Understanding numerical root-finding methods is therefore essential: it helps us build intuition, choose robust algorithms, and interpret results with confidence.
                     </p>
                     <div class="bg-yellow-50 p-6 rounded-2xl border-l-4 border-springer-yellow">
                         <p class="text-sm text-gray-700 italic">
@@ -72,9 +72,7 @@
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 group hover:border-springer-yellow transition-all overflow-hidden relative">
-                    <span class="text-gray-400 font-bold group-hover:text-springer-yellow text-center px-6">
-                        [Placeholder: Interactive Animation of Newton-Raphson Convergence]
-                    </span>
+                    <img src="Figura_chapter_1_Newton_2D.png" alt="Newton method in 2D (Chapter 1 figure)" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
@@ -127,33 +125,15 @@
 
         <section class="mb-20">
             <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-8">Julia Implementation</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Fixed-Point Iteration (Picard)</span>
-                    <pre class="code-block">
-function picard_iteration(g, x0; tol=1e-7, max_iter=100)
-    x = x0
-    for i in 1:max_iter
-        x_new = g(x)
-        if abs(x_new - x) < tol
-            return x_new, i
-        end
-        x = x_new
-    end
-    error("Did not converge")
-end</pre>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">2D Newton-Raphson Base</span>
-                    <pre class="code-block">
-function newton_2d(f, J, x_start; tol=1e-8)
-    x = x_start
-    while norm(f(x)) > tol
-        x -= J(x) \ f(x) # Efficient solver
-    end
-    return x
-end</pre>
-                </div>
+            <div class="bg-white rounded-3xl border border-gray-200 shadow-sm p-10">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Interactive Learning with Pluto.jl</span>
+                <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-4">Pluto Notebooks (Coming Soon)</h3>
+                <p class="text-gray-600 leading-relaxed max-w-4xl">
+                    To support an interactive learning experience, companion <strong>Pluto.jl</strong> notebooks will be available in the course repository. These notebooks are designed to let you experiment with parameters, visualize convergence, and explore each method step-by-step.
+                    You can access them via the repository link:
+                    <a href="REPO_LINK_HERE" class="font-black text-blue-600 hover:underline">Repository (Pluto notebooks)</a>.
+                </p>
+                <!-- Replace REPO_LINK_HERE with your actual repository URL -->
             </div>
         </section>
 
@@ -194,5 +174,6 @@ end</pre>
 
 </body>
 </html>
+
 
 
