@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Solving Nonlinear Equations - M4E</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .springer-yellow { background-color: #FFC300; }
+        .text-springer-yellow { color: #FFC300; }
+        .method-card { background-color: white; padding: 2rem; border-radius: 1.5rem; border: 1px solid #e5e7eb; transition: all 0.3s ease; display: flex; flex-direction: column; height: 100%; }
+        .method-card:hover { border-color: #FFC300; transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
+        .repo-box { background: linear-gradient(135deg, #111 0%, #222 100%); color: white; border-radius: 2rem; padding: 3rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
+            </a>
+            <nav class="flex items-center space-x-6">
+                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full springer-yellow mr-2"></span>Julia Engine
+                </a>
+                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest font-black">Chapters</a>
+                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 flex-grow">
+        
+        <section class="mb-20">
+            <div class="mb-12 text-left">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Part I: Mathematical Tools</span>
+                <h1 class="text-6xl font-black text-gray-900 mt-2 mb-8 uppercase tracking-tighter leading-none">Solving Nonlinear <br>Equations</h1>
+                <div class="h-2 w-32 springer-yellow mb-8"></div>
+                <p class="text-2xl text-gray-700 leading-snug max-w-4xl font-medium">
+                    This chapter focuses on finding roots of equations where an exact algebraic solution is impossible—a fundamental challenge in practical applications.
+                </p>
+            </div>
+
+            <div class="my-10 p-8 bg-white rounded-[2.5rem] border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex items-center space-x-6">
+                    <div class="w-12 h-12 rounded-2xl bg-gray-900 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-springer-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        The computational power of <strong>Julia</strong> is best showcased through interactive notebooks. Scroll down to explore our <strong>Jupyter Notebooks</strong> and live environment links.
+                    </p>
+                </div>
+                <a href="#repository" class="bg-gray-900 text-white text-xs font-black px-10 py-4 rounded-full uppercase tracking-widest hover:bg-gray-700 transition shadow-lg">
+                    Go to Code
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-black text-gray-900 uppercase tracking-tight mb-4">Core Iterative Methods</h2>
+                    <p class="text-gray-500 font-medium">Click on any method below to explore interactive examples and detailed convergence analysis.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="dichotomy.html" class="method-card group">
+                    <h3 class="text-2xl font-black text-gray-900">Dichotomy</h3>
+                    <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
+                        
+                    </div>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        A robust bracketing method based on the Intermediate Value Theorem. It ensures convergence if the function changes sign across the interval.
+                    </p>
+                    <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
+                </a>
+
+                <a href="secant.html" class="method-card group">
+                    <h3 class="text-2xl font-black text-gray-900">Secant</h3>
+                    <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
+                        
+                    </div>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Utilizes a linear approximation between two points. It offers superlinear convergence without the need for analytical derivatives.
+                    </p>
+                    <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
+                </a>
+
+                <a href="newton.html" class="method-card group">
+                    <h3 class="text-2xl font-black text-gray-900">Newton</h3>
+                    <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
+                        
+                    </div>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        The gold standard for local convergence. It uses the function's derivative to achieve quadratic speed toward the root.
+                    </p>
+                    <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="repository" class="mb-24 repo-box">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter">Code & Implementation</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        All Julia implementations, Jupyter notebooks, and environment configurations for this chapter are publicly available. We encourage readers to fork the repository and experiment with the parameters.
+                    </p>
+                    <div class="flex flex-col space-y-4">
+                        <a href="https://github.com/nbodnariuk/M4E" class="inline-flex items-center text-springer-yellow font-black uppercase tracking-widest text-sm hover:text-white transition">
+                            GitHub Repository <span class="ml-2">↗</span>
+                        </a>
+                        <a href="https://doi.org/10.5281/zenodo.18102498" class="inline-flex items-center text-gray-400 font-mono text-xs hover:text-white transition">
+                            doi: 10.5281/zenodo.18102498
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
+                    <h4 class="text-springer-yellow font-black uppercase tracking-widest text-xs mb-4">Available Resources</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-3"></span> .jl source scripts</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-3"></span> Interactive Jupyter Notebooks</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-springer-yellow rounded-full mr-3"></span> Manifest & Project TOML files</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-3xl font-black text-gray-900 uppercase tracking-tight mb-12">Problem Sets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-200 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-[10px] font-black uppercase text-gray-500 mr-4">Reference</span>
+                        <h3 class="text-xl font-black text-gray-900">Classic Textbook Problems</h3>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Access the standard numerical challenges featured in the Springer edition, including the Earth's energy balance zero-dimensional model.
+                    </p>
+                    <a href="exercises-book.html" class="inline-block px-8 py-3 bg-gray-900 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-gray-700 transition">
+                        View Exercises
+                    </a>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2.5rem] border border-gray-200 shadow-sm border-t-8 border-t-springer-yellow">
+                    <div class="flex items-center mb-6">
+                        <span class="px-3 py-1 bg-springer-yellow rounded-full text-[10px] font-black uppercase text-gray-900 mr-4">New Content</span>
+                        <h3 class="text-xl font-black text-gray-900">Advanced Digital Scenarios</h3>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Expanded scenarios and high-dimensional nonlinear problems designed for modern computational environments and Julia solvers.
+                    </p>
+                    <a href="https://github.com/nbodnariuk/M4E" class="inline-block px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-gray-900 hover:text-white transition">
+                        Repo Exercises
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium border-t border-black/5">
+        <p>&copy; 2026 Mathematics for the Environment | Digital Edition by N. Bodnariuk</p>
+        <p class="mt-2 text-xs opacity-75">
+            Contact: <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
