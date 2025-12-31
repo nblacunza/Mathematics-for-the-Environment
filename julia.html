@@ -10,6 +10,60 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
+
+        /* Subtle reading rhythm + layout accents (no content changes) */
+        .prose h3{
+            position: relative;
+        }
+        .prose h3::after{
+            content:"";
+            display:block;
+            height:4px;
+            width:72px;
+            margin-top:10px;
+            border-radius:999px;
+            background:#FFC300;
+            opacity:.95;
+        }
+        .prose p{
+            border-radius: 0.75rem;
+        }
+        /* Light emphasis blocks for every other paragraph (keeps text identical) */
+        .prose p:nth-of-type(even):not(.italic){
+            background: rgba(255,195,0,0.08);
+            border: 1px solid rgba(255,195,0,0.18);
+            padding: 1rem 1.25rem;
+        }
+        .prose p:nth-of-type(odd):not(.italic){
+            padding-left: 0.25rem;
+        }
+
+        /* Stronger pull-quote styling (same quote content) */
+        .pullquote{
+            background: linear-gradient(90deg, rgba(0,0,0,0.03), rgba(255,195,0,0.08));
+            border-left: 6px solid #FFC300;
+            padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+            border-radius: 1rem;
+        }
+
+        /* Section separators */
+        .section-rule{
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.10), rgba(255,195,0,0.45), rgba(0,0,0,0.10));
+        }
+
+        /* Bullet rows: add a soft card feel without changing content */
+        .bullet-row{
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 1rem;
+            padding: 1rem 1rem;
+        }
+
+        /* Make the number badges pop a touch more */
+        .badge-shadow{
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -30,12 +84,16 @@
         
         <section class="mb-16">
             <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Computing the Universe</span>
-            <h1 class="text-5xl font-black text-gray-900 mt-2 mb-8 uppercase tracking-tighter">Julia Engine</h1>
+            <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 uppercase tracking-tighter">Julia Engine</h1>
+
+            <!-- New subtle header divider (visual rhythm, no content change) -->
+            <div class="section-rule mb-10"></div>
             
-            <div class="prose prose-lg text-gray-700 leading-relaxed space-y-6">
-                <p class="italic text-gray-500 border-l-4 border-gray-200 pl-6">
+            <div class="prose prose-lg text-gray-700 leading-relaxed space-y-8">
+
+                <p class="italic text-gray-600 pullquote">
                     "Philosophy is written in this grand book—I mean the Universe—which stands continually open to our gaze, but it cannot be understood unless one first learns to comprehend the language and interpret the characters in which it is written. It is written in the language of mathematics..." 
-                    <br><span class="text-xs font-bold uppercase tracking-widest">— Galileo Galilei, Il Saggiatore</span>
+                    <br><span class="text-xs font-bold uppercase tracking-widest text-gray-500">— Galileo Galilei, Il Saggiatore</span>
                 </p>
 
                 <p>
@@ -46,6 +104,18 @@
                 <p>
                     Julia was designed to solve the "two-language problem," offering a syntax as intuitive as Python with the execution speed of Fortran or C. For the study of geophysical fluids and non-linear dynamics, this balance is essential.
                 </p>
+
+                <!-- NEW: small visual callout strip (no text changes) -->
+                <div class="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm">
+                    <div class="springer-yellow px-6 py-3">
+                        <p class="text-xs font-black uppercase tracking-widest text-gray-900">Key idea</p>
+                    </div>
+                    <div class="px-6 py-5 text-gray-700">
+                        <p class="m-0">
+                            Julia was designed to solve the "two-language problem," offering a syntax as intuitive as Python with the execution speed of Fortran or C. For the study of geophysical fluids and non-linear dynamics, this balance is essential.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- NUEVA SECCIÓN PLUTO -->
                 <h3 class="text-2xl font-bold text-gray-900 pt-6">What is Pluto.jl?</h3>
@@ -61,49 +131,49 @@
                     Throughout this book, <strong>Pluto notebooks will be the primary computational medium</strong> for exploring models, visualizing dynamics, and experimenting with parameters. Each numerical problem is designed to be executed, modified, and extended interactively.
                 </p>
 
-                <ul class="space-y-6 list-none pl-0">
-                    <li class="flex items-start">
-                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P1</span>
+                <ul class="space-y-4 list-none pl-0">
+                    <li class="flex items-start bullet-row">
+                        <span class="h-7 w-7 rounded-full bg-springer-yellow badge-shadow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P1</span>
                         <span><strong>Reactive by design:</strong> Outputs are always consistent with the code, preventing hidden dependencies.</span>
                     </li>
 
-                    <li class="flex items-start">
-                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P2</span>
+                    <li class="flex items-start bullet-row">
+                        <span class="h-7 w-7 rounded-full bg-springer-yellow badge-shadow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P2</span>
                         <span><strong>Reproducible:</strong> Each notebook contains its own package environment, ensuring long-term reproducibility.</span>
                     </li>
 
-                    <li class="flex items-start">
-                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P3</span>
+                    <li class="flex items-start bullet-row">
+                        <span class="h-7 w-7 rounded-full bg-springer-yellow badge-shadow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P3</span>
                         <span><strong>Exploratory:</strong> Ideal for parameter studies, bifurcation exploration, and dynamical systems intuition.</span>
                     </li>
-
-                    
                 </ul>
                 <!-- FIN SECCIÓN PLUTO -->
 
-                <h3 class="text-2xl font-bold text-gray-900 pt-6">Why this workflow?</h3>
+                <!-- New divider to break monotony -->
+                <div class="section-rule my-10"></div>
+
+                <h3 class="text-2xl font-bold text-gray-900 pt-2">Why this workflow?</h3>
                 <p>
                     The combination of Julia and Pluto allows us to treat numerical experiments not as black-box simulations, but as transparent mathematical objects. Code, equations, and results coexist in a single, coherent document.
                 </p>
 
-                <ul class="space-y-6 list-none pl-0">
-                    <li class="flex items-start">
-                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">01</span>
+                <ul class="space-y-4 list-none pl-0">
+                    <li class="flex items-start bullet-row">
+                        <span class="h-7 w-7 rounded-full bg-springer-yellow badge-shadow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">01</span>
                         <span><strong>Fast:</strong> Julia compiles to efficient native code via LLVM.</span>
                     </li>
 
-                    <li class="flex items-start">
-                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">02</span>
+                    <li class="flex items-start bullet-row">
+                        <span class="h-7 w-7 rounded-full bg-springer-yellow badge-shadow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">02</span>
                         <span><strong>Dynamic:</strong> Interactive exploration without sacrificing performance.</span>
                     </li>
 
-                    <li class="flex items-start">
-                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">03</span>
+                    <li class="flex items-start bullet-row">
+                        <span class="h-7 w-7 rounded-full bg-springer-yellow badge-shadow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">03</span>
                         <span><strong>Reproducible:</strong> Fully controlled computational environments.</span>
                     </li>
-
-                   
                 </ul>
+
             </div>
         </section>
 
@@ -145,4 +215,5 @@
 
 </body>
 </html>
+
 
