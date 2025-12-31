@@ -47,51 +47,88 @@
                     Julia was designed to solve the "two-language problem," offering a syntax as intuitive as Python with the execution speed of Fortran or C. For the study of geophysical fluids and non-linear dynamics, this balance is essential.
                 </p>
 
-           <ul class="space-y-6 list-none pl-0">
-    <li class="flex items-start">
-        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">01</span>
-        <span><strong>Fast:</strong> Julia was designed for high performance. Julia programs automatically compile to efficient native code via LLVM, and support multiple platforms.</span>
-    </li>
+                <!-- NUEVA SECCIÓN PLUTO -->
+                <h3 class="text-2xl font-bold text-gray-900 pt-6">What is Pluto.jl?</h3>
+                <p>
+                    <strong>Pluto</strong> is a reactive notebook environment for Julia, designed for scientific computing, teaching, and reproducible research. Unlike traditional notebooks, Pluto notebooks are built around the idea that <em>results should always reflect the current state of the code</em>.
+                </p>
 
-    <li class="flex items-start">
-        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">02</span>
-        <span><strong>Dynamic:</strong> Julia is dynamically typed, feels like a scripting language, and has good support for interactive use, but can also optionally be separately compiled.</span>
-    </li>
+                <p>
+                    In Pluto, notebooks behave like reactive documents: whenever a variable or function is modified, all dependent computations are automatically updated. This eliminates hidden state, reduces errors, and makes the logical structure of numerical experiments explicit.
+                </p>
 
-    <li class="flex items-start">
-        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">03</span>
-        <span><strong>Reproducible:</strong> Reproducible environments make it possible to recreate the same Julia environment every time, across platforms, with pre-built binaries.</span>
-    </li>
+                <p>
+                    Throughout this book, <strong>Pluto notebooks will be the primary computational medium</strong> for exploring models, visualizing dynamics, and experimenting with parameters. Each numerical problem is designed to be executed, modified, and extended interactively.
+                </p>
 
-    <li class="flex items-start">
-        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">04</span>
-        <span><strong>Composable:</strong> Julia uses multiple dispatch as a paradigm, making it easy to express many object-oriented and functional programming patterns.</span>
-    </li>
+                <ul class="space-y-6 list-none pl-0">
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P1</span>
+                        <span><strong>Reactive by design:</strong> Outputs are always consistent with the code, preventing hidden dependencies.</span>
+                    </li>
 
-    <li class="flex items-start">
-        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">05</span>
-        <span><strong>General:</strong> Julia provides asynchronous I/O, metaprogramming, debugging, logging, profiling, a package manager, and the ability to build binaries.</span>
-    </li>
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P2</span>
+                        <span><strong>Reproducible:</strong> Each notebook contains its own package environment, ensuring long-term reproducibility.</span>
+                    </li>
 
-    <li class="flex items-start">
-        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">06</span>
-        <span><strong>Open Source:</strong> Julia is an open source project with over 1,000 contributors. It is made available under the MIT license, with a welcoming community accessible to all backgrounds.</span>
-    </li>
-</ul>
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P3</span>
+                        <span><strong>Exploratory:</strong> Ideal for parameter studies, bifurcation exploration, and dynamical systems intuition.</span>
+                    </li>
+
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">P4</span>
+                        <span><strong>Publication-ready:</strong> Pluto notebooks can be exported to HTML and shared as interactive scientific documents.</span>
+                    </li>
+                </ul>
+                <!-- FIN SECCIÓN PLUTO -->
+
+                <h3 class="text-2xl font-bold text-gray-900 pt-6">Why this workflow?</h3>
+                <p>
+                    The combination of Julia and Pluto allows us to treat numerical experiments not as black-box simulations, but as transparent mathematical objects. Code, equations, and results coexist in a single, coherent document.
+                </p>
+
+                <ul class="space-y-6 list-none pl-0">
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">01</span>
+                        <span><strong>Fast:</strong> Julia compiles to efficient native code via LLVM.</span>
+                    </li>
+
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">02</span>
+                        <span><strong>Dynamic:</strong> Interactive exploration without sacrificing performance.</span>
+                    </li>
+
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">03</span>
+                        <span><strong>Reproducible:</strong> Fully controlled computational environments.</span>
+                    </li>
+
+                    <li class="flex items-start">
+                        <span class="h-6 w-6 rounded-full bg-springer-yellow flex-shrink-0 flex items-center justify-center text-[10px] font-black mr-4 mt-1">04</span>
+                        <span><strong>Composable:</strong> Multiple dispatch enables elegant mathematical abstractions.</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <section class="mb-16 py-8 border-t border-gray-200">
-            <p class="text-sm text-gray-500 mb-4">For more information about the language and its capabilities, visit the official website:</p>
-            <a href="https://julialang.org" target="_blank" class="inline-flex items-center text-lg font-bold text-gray-900 hover:text-springer-yellow transition">
-                julialang.org <span class="ml-2">↗</span>
-            </a>
+            <p class="text-sm text-gray-500 mb-4">For more information:</p>
+            <div class="flex flex-col gap-2">
+                <a href="https://julialang.org" target="_blank" class="inline-flex items-center text-lg font-bold text-gray-900 hover:text-springer-yellow transition">
+                    julialang.org <span class="ml-2">↗</span>
+                </a>
+                <a href="https://plutojl.org" target="_blank" class="inline-flex items-center text-lg font-bold text-gray-900 hover:text-springer-yellow transition">
+                    plutojl.org <span class="ml-2">↗</span>
+                </a>
+            </div>
         </section>
 
         <section class="bg-gray-900 rounded-3xl p-10 text-white shadow-xl">
             <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">Ready to work?</h3>
             <p class="text-gray-400 mb-8 leading-relaxed">
-                All proposed numerical problems in Parts I and II are available as executable notebooks.
+                All proposed numerical problems in Parts I and II are available as executable Pluto notebooks.
             </p>
             <div class="flex gap-4">
                 <a href="https://github.com/nblacunza/Mathematics-for-the-Environment---Repository/tree/main" target="_blank" class="bg-white text-gray-900 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-springer-yellow transition">
@@ -114,3 +151,4 @@
 
 </body>
 </html>
+
