@@ -10,6 +10,8 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
+        
+        /* Estilo de las tarjetas con ancho fijo para forzar el scroll */
         .method-card { 
             background-color: white; 
             padding: 2rem; 
@@ -19,12 +21,13 @@
             display: flex; 
             flex-direction: column; 
             height: 100%;
-            min-width: 300px; /* Mantiene el tamaño de la tarjeta */
+            width: 320px; /* Ancho fijo */
+            flex-shrink: 0; /* Evita que la tarjeta se encoja */
         }
         .method-card:hover { border-color: #FFC300; transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
         .repo-box { background: linear-gradient(135deg, #111 0%, #222 100%); color: white; border-radius: 2rem; padding: 3rem; }
         
-        /* Estilo para el scroll horizontal */
+        /* Ocultar scrollbar pero mantener funcionalidad */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -77,16 +80,16 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                 <div class="max-w-2xl">
                     <h2 class="text-3xl font-black text-gray-900 uppercase tracking-tight mb-4">Core Iterative Methods</h2>
-                    <p class="text-gray-500 font-medium">Click on any method below to explore interactive examples and detailed convergence analysis.</p>
+                    <p class="text-gray-500 font-medium italic underline decoration-springer-yellow decoration-2">Scroll horizontally to explore all methods. Click to view cases.</p>
                 </div>
             </div>
 
-            <div class="flex overflow-x-auto hide-scrollbar gap-8 pb-8 snap-x">
+            <div class="flex overflow-x-auto hide-scrollbar gap-8 pb-10 snap-x flex-nowrap">
                 
                 <a href="dichotomy.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Dichotomy</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
-                        
+                        [Graphic: Interval Bisection Method]
                     </div>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         A robust bracketing method based on the Intermediate Value Theorem. It ensures convergence if the function changes sign across the interval.
@@ -97,7 +100,7 @@
                 <a href="secant.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Secant</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
-                        
+                        [Graphic: Secant Line Intersect]
                     </div>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Utilizes a linear approximation between two points. It offers superlinear convergence without the need for analytical derivatives.
@@ -108,7 +111,7 @@
                 <a href="newton.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Newton</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
-                        
+                        [Graphic: Tangent Convergence]
                     </div>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         The gold standard for local convergence. It uses the function's derivative to achieve quadratic speed toward the root.
@@ -119,7 +122,7 @@
                 <a href="picard.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Picard</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
-                        
+                         [Graphic: Fixed Point Iteration]
                     </div>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Also known as fixed-point iteration. It transforms f(x)=0 into x=g(x), finding the intersection with the identity line under contractive conditions.
@@ -135,7 +138,7 @@
                 <div class="space-y-8">
                     <h2 class="text-4xl font-black uppercase tracking-tighter">Code & Implementation</h2>
                     <p class="text-gray-400 text-lg leading-relaxed">
-                        All Julia implementations, Jupyter notebooks, and environment configurations for this chapter are publicly available. We encourage readers to fork the repository and experiment with the parameters.
+                        All Julia implementations, Jupyter notebooks, and environment configurations for this chapter are publicly available.
                     </p>
                     <div class="flex flex-col space-y-4">
                         <a href="https://github.com/nbodnariuk/M4E" class="inline-flex items-center text-springer-yellow font-black uppercase tracking-widest text-sm hover:text-white transition">
