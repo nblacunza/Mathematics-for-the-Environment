@@ -98,7 +98,7 @@
                 <div class="method-card bg-white p-10 rounded-3xl shadow-sm border border-gray-100 flex flex-col">
                     <h3 class="text-2xl font-black text-gray-900 tracking-tight">Picard Iteration</h3>
                     <p class="text-base text-gray-600 mt-4 flex-grow leading-relaxed">
-                        A fixed-point iteration method based on rewriting the equation as <em>x = g(x)</em>. Simple, intuitive, and foundational for convergence theory.
+                    Picard iteration is a fixed-point method that approximates the solution of a typically nonlinear equation by repeatedly evaluating a function, starting from an initial guess, until convergence to a fixed point is achieved.
                     </p>
                     <div class="my-8 h-72 bg-gray-50 rounded-2xl border flex items-center justify-center overflow-hidden">
                         <img src="Picard_1.gif" alt="Picard iteration animation" class="max-h-full w-auto object-contain">
@@ -111,7 +111,7 @@
                 <div class="method-card bg-white p-10 rounded-3xl shadow-sm border border-gray-100 flex flex-col">
                     <h3 class="text-2xl font-black text-gray-900 tracking-tight">Secant Method</h3>
                     <p class="text-base text-gray-600 mt-4 flex-grow leading-relaxed">
-                        An approximation that uses two points to draw a line. Faster than Picard iteration and doesn't require calculating derivatives analytically.
+                        The secant method is an iterative root-finding technique for typically nonlinear equations that updates the solution by intersecting a line through two successive approximations with the horizontal axis, avoiding the explicit computation of derivatives.
                     </p>
                     <div class="my-8 h-72 bg-gray-50 rounded-2xl border flex items-center justify-center overflow-hidden">
                         <img src="Secante.gif" alt="Secant method animation" class="max-h-full w-auto object-contain">
@@ -130,7 +130,7 @@
                         </span>
                     </div>
                     <p class="text-base text-gray-600 mt-4 flex-grow leading-relaxed">
-                        The gold standard for speed. By using the tangent (or Jacobian in higher dimensions), it can achieve quadratic convergence near a simple root.
+                        The method updates the solution by linearising the function at each iterate using the tangent line (or the Jacobian in higher dimensions). Under suitable smoothness assumptions and for a sufficiently accurate initial guess, it exhibits quadratic convergence in the neighbourhood of a simple root.
                     </p>
                     <div class="my-8 h-80 bg-gray-50 rounded-2xl border flex items-center justify-center overflow-hidden">
                         <img src="Newton_2.gif" alt="Newton-Raphson animation" class="max-h-full w-auto object-contain">
