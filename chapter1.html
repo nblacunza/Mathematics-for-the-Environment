@@ -10,9 +10,23 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
         .springer-yellow { background-color: #FFC300; }
         .text-springer-yellow { color: #FFC300; }
-        .method-card { background-color: white; padding: 2rem; border-radius: 1.5rem; border: 1px solid #e5e7eb; transition: all 0.3s ease; display: flex; flex-direction: column; height: 100%; }
+        .method-card { 
+            background-color: white; 
+            padding: 2rem; 
+            border-radius: 1.5rem; 
+            border: 1px solid #e5e7eb; 
+            transition: all 0.3s ease; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%;
+            min-width: 300px; /* Mantiene el tamaño de la tarjeta */
+        }
         .method-card:hover { border-color: #FFC300; transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
         .repo-box { background: linear-gradient(135deg, #111 0%, #222 100%); color: white; border-radius: 2rem; padding: 3rem; }
+        
+        /* Estilo para el scroll horizontal */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -67,8 +81,9 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="dichotomy.html" class="method-card group">
+            <div class="flex overflow-x-auto hide-scrollbar gap-8 pb-8 snap-x">
+                
+                <a href="dichotomy.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Dichotomy</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
                         
@@ -79,7 +94,7 @@
                     <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
                 </a>
 
-                <a href="secant.html" class="method-card group">
+                <a href="secant.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Secant</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
                         
@@ -90,7 +105,7 @@
                     <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
                 </a>
 
-                <a href="newton.html" class="method-card group">
+                <a href="newton.html" class="method-card group snap-start">
                     <h3 class="text-2xl font-black text-gray-900">Newton</h3>
                     <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
                         
@@ -100,6 +115,18 @@
                     </p>
                     <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
                 </a>
+
+                <a href="picard.html" class="method-card group snap-start">
+                    <h3 class="text-2xl font-black text-gray-900">Picard</h3>
+                    <div class="my-6 aspect-square bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden">
+                        
+                    </div>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Also known as fixed-point iteration. It transforms f(x)=0 into x=g(x), finding the intersection with the identity line under contractive conditions.
+                    </p>
+                    <span class="mt-6 text-[10px] font-black uppercase tracking-widest text-springer-yellow group-hover:text-gray-900 transition">Interactive Case Study →</span>
+                </a>
+
             </div>
         </section>
 
