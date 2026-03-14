@@ -16,6 +16,8 @@
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Inter', sans-serif;
       background:
@@ -155,13 +157,76 @@
       color: #111827;
     }
 
+    .chapter-link span:last-child {
+      transition: transform 220ms ease;
+    }
+
+    .milestone:hover .chapter-link span:last-child,
+    .milestone.active .chapter-link span:last-child,
+    .milestone:focus-within .chapter-link span:last-child {
+      transform: translateX(3px);
+    }
+
     @media (max-width: 768px) {
-      .road-wrapper, .road { min-height: 2100px; }
-      .milestone { width: 210px; }
+      .road-wrapper {
+        min-height: auto;
+        padding: 0;
+      }
+
+      .road {
+        min-height: auto;
+        padding: 1.5rem 1rem 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .road-svg {
+        display: none;
+      }
+
+      .road::before {
+        content: "";
+        position: absolute;
+        left: 2rem;
+        top: 1.5rem;
+        bottom: 1.5rem;
+        width: 6px;
+        border-radius: 999px;
+        background: linear-gradient(to bottom, #ffd34d, var(--springer-yellow));
+        opacity: 0.95;
+      }
+
+      .milestone {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100%;
+        max-width: none;
+        padding-left: 3.25rem;
+      }
+
+      .milestone-card {
+        width: 100%;
+        padding: 0.9rem 1rem 0.9rem 3.9rem;
+        border-radius: 1.25rem;
+      }
+
+      .marker {
+        left: -2.2rem;
+        top: 1.2rem;
+        transform: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.7rem;
+      }
+
       .tooltip {
         opacity: 1;
         transform: none;
         pointer-events: auto;
+        margin-top: 0.6rem;
       }
     }
   </style>
@@ -206,102 +271,124 @@
 
         <article class="milestone" style="top: 7%; left: 16%;">
           <div class="milestone-card">
-            <button class="marker">1</button>
+            <button class="marker" aria-label="Chapter 1">1</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 1</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Solving nonlinear equations</h3>
             <a href="chapter1.html" class="chapter-link">Open chapter <span>→</span></a>
           </div>
-          <div class="tooltip">Dichotomy, secant, and Newton methods for solving nonlinear equations in one and several variables.</div>
+          <div class="tooltip">
+            Dichotomy, secant, and Newton methods for solving nonlinear equations in one and several variables.
+          </div>
         </article>
 
         <article class="milestone" style="top: 12%; left: 53%;">
           <div class="milestone-card">
-            <button class="marker">2</button>
+            <button class="marker" aria-label="Chapter 2">2</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 2</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Elementary topology</h3>
           </div>
-          <div class="tooltip">Open and closed sets, compactness, continuity, and the geometric language underlying analysis.</div>
+          <div class="tooltip">
+            Open and closed sets, compactness, continuity, and the geometric language underlying analysis.
+          </div>
         </article>
 
         <article class="milestone" style="top: 17%; left: 82%;">
           <div class="milestone-card">
-            <button class="marker">3</button>
+            <button class="marker" aria-label="Chapter 3">3</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 3</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Linear algebra and applications</h3>
           </div>
-          <div class="tooltip">Vectors, matrices, norms, eigendirections, and their practical meaning in scientific modelling.</div>
+          <div class="tooltip">
+            Vectors, matrices, norms, eigendirections, and their practical meaning in scientific modelling.
+          </div>
         </article>
 
         <article class="milestone" style="top: 26%; left: 74%;">
           <div class="milestone-card">
-            <button class="marker">4</button>
+            <button class="marker" aria-label="Chapter 4">4</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 4</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Solving linear systems Ax = b</h3>
           </div>
-          <div class="tooltip">Direct and iterative methods, conditioning, and computational strategies for linear systems.</div>
+          <div class="tooltip">
+            Direct and iterative methods, conditioning, and computational strategies for linear systems.
+          </div>
         </article>
 
         <article class="milestone" style="top: 35%; left: 38%;">
           <div class="milestone-card">
-            <button class="marker">5</button>
+            <button class="marker" aria-label="Chapter 5">5</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 5</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Computing eigenvalues and eigenvectors</h3>
           </div>
-          <div class="tooltip">Spectral methods, dominant modes, and the geometry of linear operators.</div>
+          <div class="tooltip">
+            Spectral methods, dominant modes, and the geometry of linear operators.
+          </div>
         </article>
 
         <article class="milestone" style="top: 46%; left: 17%;">
           <div class="milestone-card">
-            <button class="marker">6</button>
+            <button class="marker" aria-label="Chapter 6">6</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 6</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Interpolation and approximation</h3>
           </div>
-          <div class="tooltip">Constructing continuous descriptions from data, with approximation error and practical interpolation schemes.</div>
+          <div class="tooltip">
+            Constructing continuous descriptions from data, with approximation error and practical interpolation schemes.
+          </div>
         </article>
 
         <article class="milestone" style="top: 56%; left: 23%;">
           <div class="milestone-card">
-            <button class="marker">7</button>
+            <button class="marker" aria-label="Chapter 7">7</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 7</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Numerical integration methods</h3>
           </div>
-          <div class="tooltip">Quadrature rules and numerical estimates of integrals, fluxes, and accumulated quantities.</div>
+          <div class="tooltip">
+            Quadrature rules and numerical estimates of integrals, fluxes, and accumulated quantities.
+          </div>
         </article>
 
         <article class="milestone" style="top: 64%; left: 61%;">
           <div class="milestone-card">
-            <button class="marker">8</button>
+            <button class="marker" aria-label="Chapter 8">8</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 8</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Introduction to ODEs</h3>
           </div>
-          <div class="tooltip">Flows, trajectories, and the interpretation of differential equations as models of time evolution.</div>
+          <div class="tooltip">
+            Flows, trajectories, and the interpretation of differential equations as models of time evolution.
+          </div>
         </article>
 
         <article class="milestone" style="top: 73%; left: 84%;">
           <div class="milestone-card">
-            <button class="marker">9</button>
+            <button class="marker" aria-label="Chapter 9">9</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 9</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Linear autonomous systems</h3>
           </div>
-          <div class="tooltip">Equilibria, invariant directions, stability, and phase portraits near fixed points.</div>
+          <div class="tooltip">
+            Equilibria, invariant directions, stability, and phase portraits near fixed points.
+          </div>
         </article>
 
         <article class="milestone" style="top: 82%; left: 73%;">
           <div class="milestone-card">
-            <button class="marker">10</button>
+            <button class="marker" aria-label="Chapter 10">10</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 10</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Numerically solving ODEs</h3>
           </div>
-          <div class="tooltip">Euler and Runge–Kutta methods, accuracy, stability, and interpretation of numerical trajectories.</div>
+          <div class="tooltip">
+            Euler and Runge–Kutta methods, accuracy, stability, and interpretation of numerical trajectories.
+          </div>
         </article>
 
         <article class="milestone" style="top: 91%; left: 39%;">
           <div class="milestone-card">
-            <button class="marker">11</button>
+            <button class="marker" aria-label="Chapter 11">11</button>
             <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 11</span>
             <h3 class="mt-1 text-lg font-black text-gray-900">Elements of topological dynamics</h3>
           </div>
-          <div class="tooltip">Invariant sets, recurrence, attractors, and the topological understanding of long-term dynamics.</div>
+          <div class="tooltip">
+            Invariant sets, recurrence, attractors, and the topological understanding of long-term dynamics.
+          </div>
         </article>
       </div>
     </section>
