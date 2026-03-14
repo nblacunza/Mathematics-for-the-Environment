@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part II - Climate & Ecology</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    :root {
+      --springer-yellow: #FFC300;
+      --paper: #f7f7f7;
+      --ink: #111827;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255,195,0,0.10), transparent 20%),
+        radial-gradient(circle at bottom left, rgba(17,24,39,0.05), transparent 24%),
+        var(--paper);
+      color: var(--ink);
+    }
+
+    .springer-yellow { background-color: var(--springer-yellow); }
+    .text-springer-yellow { color: var(--springer-yellow); }
+
+    .road-wrapper {
+      position: relative;
+      min-height: 1400px;
+      border-radius: 2rem;
+      background: linear-gradient(180deg, rgba(17,24,39,0.97), rgba(31,41,55,0.94));
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(17,24,39,0.15);
+    }
+
+    .road {
+      position: relative;
+      width: 100%;
+      min-height: 1400px;
+      padding: 2rem 1rem;
+    }
+
+    .road-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .road-path-base {
+      fill: none;
+      stroke: rgba(255,255,255,0.12);
+      stroke-width: 54;
+      stroke-linecap: round;
+    }
+
+    .road-path-line {
+      fill: none;
+      stroke: var(--springer-yellow);
+      stroke-width: 28;
+      stroke-linecap: round;
+      filter: drop-shadow(0 14px 18px rgba(255,195,0,0.20));
+    }
+
+    .road-path-center {
+      fill: none;
+      stroke: rgba(255,255,255,0.55);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 10 14;
+    }
+
+    .milestone {
+      position: absolute;
+      width: 230px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .milestone-card {
+      position: relative;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.5rem;
+      padding: 0.8rem 0.9rem 0.8rem 4.2rem;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .milestone:hover .milestone-card,
+    .milestone.active .milestone-card,
+    .milestone:focus-within .milestone-card {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+      border-color: rgba(255,195,0,0.55);
+    }
+
+    .marker {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.7rem;
+      height: 2.7rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ffd34d, var(--springer-yellow));
+      border: 3px solid white;
+      box-shadow: 0 10px 25px rgba(255,195,0,0.35);
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: #111827;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      margin-top: 0.75rem;
+      background: rgba(255,255,255,0.98);
+      color: #111827;
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .milestone:hover .tooltip,
+    .milestone.active .tooltip,
+    .milestone:focus-within .tooltip {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    @media (max-width: 768px) {
+      .road-wrapper, .road { min-height: 1650px; }
+      .milestone { width: 210px; }
+      .tooltip {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <header class="bg-gray-950/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-extrabold text-white tracking-tight">
+        Mathematics for the <span class="text-springer-yellow">Environment</span>
+      </a>
+      <nav class="flex items-center space-x-6">
+        <a href="contents.html" class="text-sm font-bold text-gray-400 hover:text-white transition uppercase tracking-widest">
+          Contents
+        </a>
+        <a href="index.html" class="text-sm font-bold text-gray-400 hover:text-white transition uppercase tracking-widest">
+          Home
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 flex-grow w-full">
+    <section class="mb-10">
+      <p class="text-xs font-black uppercase tracking-[0.28em] text-gray-500 mb-4">Part II</p>
+      <h1 class="text-5xl font-black uppercase tracking-tighter text-gray-900">
+        Climate & <span class="text-springer-yellow">Ecology</span>
+      </h1>
+      <div class="h-1.5 w-28 springer-yellow mt-4"></div>
+      <p class="mt-6 max-w-3xl text-gray-600 leading-relaxed">
+        The applied journey through climate science, geophysical fluid dynamics, ecology, bifurcations, and forced variability.
+      </p>
+    </section>
+
+    <section class="road-wrapper">
+      <div class="road">
+        <svg class="road-svg" viewBox="0 0 1200 1450" preserveAspectRatio="none" aria-hidden="true">
+          <path class="road-path-base" d="M 170 140 C 420 80, 770 140, 930 300 C 1030 400, 960 610, 720 700 C 500 780, 210 760, 240 980 C 275 1210, 780 1210, 980 1290" />
+          <path class="road-path-line" d="M 170 140 C 420 80, 770 140, 930 300 C 1030 400, 960 610, 720 700 C 500 780, 210 760, 240 980 C 275 1210, 780 1210, 980 1290" />
+          <path class="road-path-center" d="M 170 140 C 420 80, 770 140, 930 300 C 1030 400, 960 610, 720 700 C 500 780, 210 760, 240 980 C 275 1210, 780 1210, 980 1290" />
+        </svg>
+
+        <article class="milestone" style="top: 12%; left: 18%;">
+          <div class="milestone-card">
+            <button class="marker">12</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 12</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Basic facts of the climate sciences</h3>
+          </div>
+          <div class="tooltip">The physical setting of the climate system: balances, scales, feedbacks, and first principles.</div>
+        </article>
+
+        <article class="milestone" style="top: 18%; left: 49%;">
+          <div class="milestone-card">
+            <button class="marker">13</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 13</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Nonlinear systems and bifurcations</h3>
+          </div>
+          <div class="tooltip">Thresholds, attractors, and qualitative transitions in nonlinear environmental systems.</div>
+        </article>
+
+        <article class="milestone" style="top: 25%; left: 81%;">
+          <div class="milestone-card">
+            <button class="marker">14</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 14</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Studying the atmosphere and oceans</h3>
+          </div>
+          <div class="tooltip">A dynamical view of the fluid Earth, from balances and waves to circulation and variability.</div>
+        </article>
+
+        <article class="milestone" style="top: 48%; left: 67%;">
+          <div class="milestone-card">
+            <button class="marker">15</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 15</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Applications to ecology</h3>
+          </div>
+          <div class="tooltip">Mathematical structures applied to ecological interactions, populations, and environmental feedbacks.</div>
+        </article>
+
+        <article class="milestone" style="top: 67%; left: 25%;">
+          <div class="milestone-card">
+            <button class="marker">16</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 16</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Numerical bifurcation analysis of climate models</h3>
+          </div>
+          <div class="tooltip">Continuation methods and computational tools for detecting regime shifts and multistability.</div>
+        </article>
+
+        <article class="milestone" style="top: 89%; left: 77%;">
+          <div class="milestone-card">
+            <button class="marker">17</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 17</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Natural variability and forced changes</h3>
+          </div>
+          <div class="tooltip">Distinguishing internal variability from externally forced change across environmental systems.</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium mt-16">
+    <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+  </footer>
+
+  <script>
+    const milestones = document.querySelectorAll('.milestone');
+
+    milestones.forEach((item) => {
+      const marker = item.querySelector('.marker');
+
+      marker.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isActive = item.classList.contains('active');
+        milestones.forEach((m) => m.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      const clickedMilestone = event.target.closest('.milestone');
+      if (!clickedMilestone) {
+        milestones.forEach((m) => m.classList.remove('active'));
+      }
+    });
+  </script>
+</body>
+</html>
