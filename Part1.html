@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part I - Mathematical Tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    :root {
+      --springer-yellow: #FFC300;
+      --paper: #f7f7f7;
+      --ink: #111827;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,195,0,0.10), transparent 20%),
+        var(--paper);
+      color: var(--ink);
+    }
+
+    .springer-yellow { background-color: var(--springer-yellow); }
+    .text-springer-yellow { color: var(--springer-yellow); }
+
+    .road-wrapper {
+      position: relative;
+      min-height: 1800px;
+      border-radius: 2rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75));
+      border: 1px solid rgba(17,24,39,0.06);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(17,24,39,0.08);
+    }
+
+    .road {
+      position: relative;
+      width: 100%;
+      min-height: 1800px;
+      padding: 2rem 1rem;
+    }
+
+    .road-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .road-path-base {
+      fill: none;
+      stroke: rgba(17,24,39,0.10);
+      stroke-width: 54;
+      stroke-linecap: round;
+    }
+
+    .road-path-line {
+      fill: none;
+      stroke: var(--springer-yellow);
+      stroke-width: 28;
+      stroke-linecap: round;
+      filter: drop-shadow(0 14px 18px rgba(255,195,0,0.20));
+    }
+
+    .road-path-center {
+      fill: none;
+      stroke: rgba(255,255,255,0.70);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 10 14;
+    }
+
+    .milestone {
+      position: absolute;
+      width: 220px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .milestone-card {
+      position: relative;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(17,24,39,0.08);
+      border-radius: 1.5rem;
+      padding: 0.8rem 0.9rem 0.8rem 4.2rem;
+      box-shadow: 0 10px 35px rgba(17,24,39,0.07);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .milestone:hover .milestone-card,
+    .milestone.active .milestone-card,
+    .milestone:focus-within .milestone-card {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(17,24,39,0.14);
+      border-color: rgba(255,195,0,0.55);
+    }
+
+    .marker {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.7rem;
+      height: 2.7rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ffd34d, var(--springer-yellow));
+      border: 3px solid white;
+      box-shadow: 0 10px 25px rgba(255,195,0,0.35);
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: #111827;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      margin-top: 0.75rem;
+      background: rgba(17,24,39,0.96);
+      color: white;
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      box-shadow: 0 18px 45px rgba(17,24,39,0.22);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .milestone:hover .tooltip,
+    .milestone.active .tooltip,
+    .milestone:focus-within .tooltip {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .chapter-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    @media (max-width: 768px) {
+      .road-wrapper, .road { min-height: 2100px; }
+      .milestone { width: 210px; }
+      .tooltip {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+        Mathematics for the <span class="text-springer-yellow">Environment</span>
+      </a>
+      <nav class="flex items-center space-x-6">
+        <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">
+          Contents
+        </a>
+        <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">
+          Home
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 flex-grow w-full">
+    <section class="mb-10">
+      <p class="text-xs font-black uppercase tracking-[0.28em] text-gray-500 mb-4">Part I</p>
+      <h1 class="text-5xl font-black uppercase tracking-tighter text-gray-900">
+        Mathematical <span class="text-springer-yellow">Tools</span>
+      </h1>
+      <div class="h-1.5 w-28 springer-yellow mt-4"></div>
+      <p class="mt-6 max-w-3xl text-gray-600 leading-relaxed">
+        The theoretical journey through numerical analysis, topology, linear algebra, ODEs, and topological dynamics.
+      </p>
+    </section>
+
+    <section class="road-wrapper">
+      <div class="road">
+        <svg class="road-svg" viewBox="0 0 1200 1900" preserveAspectRatio="none" aria-hidden="true">
+          <path class="road-path-base" d="M 180 120 C 470 90, 700 220, 920 290 C 1070 338, 1020 570, 760 650 C 500 730, 180 710, 210 980 C 240 1230, 910 1130, 970 1420 C 1010 1605, 700 1730, 360 1780" />
+          <path class="road-path-line" d="M 180 120 C 470 90, 700 220, 920 290 C 1070 338, 1020 570, 760 650 C 500 730, 180 710, 210 980 C 240 1230, 910 1130, 970 1420 C 1010 1605, 700 1730, 360 1780" />
+          <path class="road-path-center" d="M 180 120 C 470 90, 700 220, 920 290 C 1070 338, 1020 570, 760 650 C 500 730, 180 710, 210 980 C 240 1230, 910 1130, 970 1420 C 1010 1605, 700 1730, 360 1780" />
+        </svg>
+
+        <article class="milestone" style="top: 7%; left: 16%;">
+          <div class="milestone-card">
+            <button class="marker">1</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 1</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Solving nonlinear equations</h3>
+            <a href="chapter1.html" class="chapter-link">Open chapter <span>→</span></a>
+          </div>
+          <div class="tooltip">Dichotomy, secant, and Newton methods for solving nonlinear equations in one and several variables.</div>
+        </article>
+
+        <article class="milestone" style="top: 12%; left: 53%;">
+          <div class="milestone-card">
+            <button class="marker">2</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 2</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Elementary topology</h3>
+          </div>
+          <div class="tooltip">Open and closed sets, compactness, continuity, and the geometric language underlying analysis.</div>
+        </article>
+
+        <article class="milestone" style="top: 17%; left: 82%;">
+          <div class="milestone-card">
+            <button class="marker">3</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 3</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Linear algebra and applications</h3>
+          </div>
+          <div class="tooltip">Vectors, matrices, norms, eigendirections, and their practical meaning in scientific modelling.</div>
+        </article>
+
+        <article class="milestone" style="top: 26%; left: 74%;">
+          <div class="milestone-card">
+            <button class="marker">4</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 4</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Solving linear systems Ax = b</h3>
+          </div>
+          <div class="tooltip">Direct and iterative methods, conditioning, and computational strategies for linear systems.</div>
+        </article>
+
+        <article class="milestone" style="top: 35%; left: 38%;">
+          <div class="milestone-card">
+            <button class="marker">5</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 5</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Computing eigenvalues and eigenvectors</h3>
+          </div>
+          <div class="tooltip">Spectral methods, dominant modes, and the geometry of linear operators.</div>
+        </article>
+
+        <article class="milestone" style="top: 46%; left: 17%;">
+          <div class="milestone-card">
+            <button class="marker">6</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 6</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Interpolation and approximation</h3>
+          </div>
+          <div class="tooltip">Constructing continuous descriptions from data, with approximation error and practical interpolation schemes.</div>
+        </article>
+
+        <article class="milestone" style="top: 56%; left: 23%;">
+          <div class="milestone-card">
+            <button class="marker">7</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 7</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Numerical integration methods</h3>
+          </div>
+          <div class="tooltip">Quadrature rules and numerical estimates of integrals, fluxes, and accumulated quantities.</div>
+        </article>
+
+        <article class="milestone" style="top: 64%; left: 61%;">
+          <div class="milestone-card">
+            <button class="marker">8</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 8</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Introduction to ODEs</h3>
+          </div>
+          <div class="tooltip">Flows, trajectories, and the interpretation of differential equations as models of time evolution.</div>
+        </article>
+
+        <article class="milestone" style="top: 73%; left: 84%;">
+          <div class="milestone-card">
+            <button class="marker">9</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 9</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Linear autonomous systems</h3>
+          </div>
+          <div class="tooltip">Equilibria, invariant directions, stability, and phase portraits near fixed points.</div>
+        </article>
+
+        <article class="milestone" style="top: 82%; left: 73%;">
+          <div class="milestone-card">
+            <button class="marker">10</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 10</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Numerically solving ODEs</h3>
+          </div>
+          <div class="tooltip">Euler and Runge–Kutta methods, accuracy, stability, and interpretation of numerical trajectories.</div>
+        </article>
+
+        <article class="milestone" style="top: 91%; left: 39%;">
+          <div class="milestone-card">
+            <button class="marker">11</button>
+            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 11</span>
+            <h3 class="mt-1 text-lg font-black text-gray-900">Elements of topological dynamics</h3>
+          </div>
+          <div class="tooltip">Invariant sets, recurrence, attractors, and the topological understanding of long-term dynamics.</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium mt-16">
+    <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+  </footer>
+
+  <script>
+    const milestones = document.querySelectorAll('.milestone');
+
+    milestones.forEach((item) => {
+      const marker = item.querySelector('.marker');
+
+      marker.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isActive = item.classList.contains('active');
+        milestones.forEach((m) => m.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      const clickedMilestone = event.target.closest('.milestone');
+      if (!clickedMilestone) {
+        milestones.forEach((m) => m.classList.remove('active'));
+      }
+    });
+  </script>
+</body>
+</html>
