@@ -15,7 +15,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -31,7 +30,7 @@
 
     .road-wrapper {
       position: relative;
-      min-height: 2200px;
+      min-height: 2300px;
       border-radius: 2rem;
       background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75));
       border: 1px solid rgba(17,24,39,0.06);
@@ -42,7 +41,7 @@
     .road {
       position: relative;
       width: 100%;
-      min-height: 2200px;
+      min-height: 2300px;
       padding: 2rem 1rem;
     }
 
@@ -57,7 +56,7 @@
     .road-path-base {
       fill: none;
       stroke: rgba(17,24,39,0.10);
-      stroke-width: 54;
+      stroke-width: 56;
       stroke-linecap: round;
     }
 
@@ -79,14 +78,14 @@
 
     .milestone {
       position: absolute;
-      width: 220px;
+      width: 230px;
       transform: translate(-50%, -50%);
       z-index: 2;
     }
 
     .milestone-card {
       position: relative;
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.90);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(17,24,39,0.08);
       border-radius: 1.5rem;
@@ -262,158 +261,43 @@
     </section>
 
     <section class="road-wrapper">
-      <div class="road">
-        <svg class="road-svg" viewBox="0 0 1200 2300" preserveAspectRatio="none" aria-hidden="true">
-          <path class="road-path-base" d="M 170 130
-            C 380 95, 620 150, 850 260
-            C 1010 340, 1030 520, 900 640
-            C 760 770, 460 760, 260 860
-            C 130 925, 130 1110, 300 1220
-            C 470 1335, 770 1285, 930 1385
-            C 1040 1455, 1030 1635, 880 1745
-            C 720 1865, 440 1845, 280 1940
-            C 180 2000, 210 2125, 380 2190" />
-          <path class="road-path-line" d="M 170 130
-            C 380 95, 620 150, 850 260
-            C 1010 340, 1030 520, 900 640
-            C 760 770, 460 760, 260 860
-            C 130 925, 130 1110, 300 1220
-            C 470 1335, 770 1285, 930 1385
-            C 1040 1455, 1030 1635, 880 1745
-            C 720 1865, 440 1845, 280 1940
-            C 180 2000, 210 2125, 380 2190" />
-          <path class="road-path-center" d="M 170 130
-            C 380 95, 620 150, 850 260
-            C 1010 340, 1030 520, 900 640
-            C 760 770, 460 760, 260 860
-            C 130 925, 130 1110, 300 1220
-            C 470 1335, 770 1285, 930 1385
-            C 1040 1455, 1030 1635, 880 1745
-            C 720 1865, 440 1845, 280 1940
-            C 180 2000, 210 2125, 380 2190" />
+      <div class="road" id="road">
+        <svg class="road-svg" viewBox="0 0 1200 2400" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            id="book-road"
+            class="road-path-base"
+            d="M 180 130
+               C 390 90, 650 150, 880 280
+               C 1040 370, 1050 620, 870 760
+               C 700 890, 390 870, 230 990
+               C 120 1075, 150 1280, 340 1380
+               C 520 1470, 800 1430, 950 1540
+               C 1080 1635, 1040 1845, 840 1960
+               C 650 2070, 370 2050, 250 2170
+               C 190 2230, 250 2310, 430 2340" />
+          <path
+            class="road-path-line"
+            d="M 180 130
+               C 390 90, 650 150, 880 280
+               C 1040 370, 1050 620, 870 760
+               C 700 890, 390 870, 230 990
+               C 120 1075, 150 1280, 340 1380
+               C 520 1470, 800 1430, 950 1540
+               C 1080 1635, 1040 1845, 840 1960
+               C 650 2070, 370 2050, 250 2170
+               C 190 2230, 250 2310, 430 2340" />
+          <path
+            class="road-path-center"
+            d="M 180 130
+               C 390 90, 650 150, 880 280
+               C 1040 370, 1050 620, 870 760
+               C 700 890, 390 870, 230 990
+               C 120 1075, 150 1280, 340 1380
+               C 520 1470, 800 1430, 950 1540
+               C 1080 1635, 1040 1845, 840 1960
+               C 650 2070, 370 2050, 250 2170
+               C 190 2230, 250 2310, 430 2340" />
         </svg>
-
-        <article class="milestone" style="top: 7%; left: 16%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 1">1</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 1</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Solving nonlinear equations</h3>
-            <a href="chapter1.html" class="chapter-link">Open chapter <span>→</span></a>
-          </div>
-          <div class="tooltip">
-            Dichotomy, secant, and Newton methods for solving nonlinear equations in one and several variables.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 15%; left: 43%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 2">2</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 2</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Elementary topology</h3>
-          </div>
-          <div class="tooltip">
-            Open and closed sets, compactness, continuity, and the geometric language underlying analysis.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 23%; left: 76%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 3">3</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 3</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Linear algebra and applications</h3>
-          </div>
-          <div class="tooltip">
-            Vectors, matrices, norms, eigendirections, and their practical meaning in scientific modelling.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 31%; left: 82%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 4">4</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 4</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Solving linear systems Ax = b</h3>
-          </div>
-          <div class="tooltip">
-            Direct and iterative methods, conditioning, and computational strategies for linear systems.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 39%; left: 57%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 5">5</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 5</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Computing eigenvalues and eigenvectors</h3>
-          </div>
-          <div class="tooltip">
-            Spectral methods, dominant modes, and the geometry of linear operators.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 47%; left: 22%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 6">6</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 6</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Interpolation and approximation</h3>
-          </div>
-          <div class="tooltip">
-            Constructing continuous descriptions from data, with approximation error and practical interpolation schemes.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 55%; left: 16%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 7">7</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 7</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Numerical integration methods</h3>
-          </div>
-          <div class="tooltip">
-            Quadrature rules and numerical estimates of integrals, fluxes, and accumulated quantities.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 63%; left: 40%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 8">8</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 8</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Introduction to ODEs</h3>
-          </div>
-          <div class="tooltip">
-            Flows, trajectories, and the interpretation of differential equations as models of time evolution.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 71%; left: 78%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 9">9</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 9</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Linear autonomous systems</h3>
-          </div>
-          <div class="tooltip">
-            Equilibria, invariant directions, stability, and phase portraits near fixed points.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 79%; left: 78%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 10">10</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 10</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Numerically solving ODEs</h3>
-          </div>
-          <div class="tooltip">
-            Euler and Runge–Kutta methods, accuracy, stability, and interpretation of numerical trajectories.
-          </div>
-        </article>
-
-        <article class="milestone" style="top: 87%; left: 50%;">
-          <div class="milestone-card">
-            <button class="marker" aria-label="Chapter 11">11</button>
-            <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter 11</span>
-            <h3 class="mt-1 text-lg font-black text-gray-900">Elements of topological dynamics</h3>
-          </div>
-          <div class="tooltip">
-            Invariant sets, recurrence, attractors, and the topological understanding of long-term dynamics.
-          </div>
-        </article>
       </div>
     </section>
   </main>
@@ -423,25 +307,184 @@
   </footer>
 
   <script>
-    const milestones = document.querySelectorAll('.milestone');
-
-    milestones.forEach((item) => {
-      const marker = item.querySelector('.marker');
-
-      marker.addEventListener('click', (event) => {
-        event.preventDefault();
-        const isActive = item.classList.contains('active');
-        milestones.forEach((m) => m.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
-      });
-    });
-
-    document.addEventListener('click', (event) => {
-      const clickedMilestone = event.target.closest('.milestone');
-      if (!clickedMilestone) {
-        milestones.forEach((m) => m.classList.remove('active'));
+    const chapters = [
+      {
+        n: 1,
+        title: "Solving nonlinear equations",
+        desc: "Dichotomy, secant, and Newton methods for solving nonlinear equations in one and several variables.",
+        href: "chapter1.html",
+        side: -1
+      },
+      {
+        n: 2,
+        title: "Elementary topology",
+        desc: "Open and closed sets, compactness, continuity, and the geometric language underlying analysis.",
+        side: 1
+      },
+      {
+        n: 3,
+        title: "Linear algebra and applications",
+        desc: "Vectors, matrices, norms, eigendirections, and their practical meaning in scientific modelling.",
+        side: 1
+      },
+      {
+        n: 4,
+        title: "Solving linear systems Ax = b",
+        desc: "Direct and iterative methods, conditioning, and computational strategies for linear systems.",
+        side: 1
+      },
+      {
+        n: 5,
+        title: "Computing eigenvalues and eigenvectors",
+        desc: "Spectral methods, dominant modes, and the geometry of linear operators.",
+        side: -1
+      },
+      {
+        n: 6,
+        title: "Interpolation and approximation",
+        desc: "Constructing continuous descriptions from data, with approximation error and practical interpolation schemes.",
+        side: -1
+      },
+      {
+        n: 7,
+        title: "Numerical integration methods",
+        desc: "Quadrature rules and numerical estimates of integrals, fluxes, and accumulated quantities.",
+        side: -1
+      },
+      {
+        n: 8,
+        title: "Introduction to ODEs",
+        desc: "Flows, trajectories, and the interpretation of differential equations as models of time evolution.",
+        side: 1
+      },
+      {
+        n: 9,
+        title: "Linear autonomous systems",
+        desc: "Equilibria, invariant directions, stability, and phase portraits near fixed points.",
+        side: 1
+      },
+      {
+        n: 10,
+        title: "Numerically solving ODEs",
+        desc: "Euler and Runge–Kutta methods, accuracy, stability, and interpretation of numerical trajectories.",
+        side: 1
+      },
+      {
+        n: 11,
+        title: "Elements of topological dynamics",
+        desc: "Invariant sets, recurrence, attractors, and the topological understanding of long-term dynamics.",
+        side: -1
       }
-    });
+    ];
+
+    const road = document.getElementById("road");
+    const path = document.getElementById("book-road");
+
+    function makeMilestone(ch) {
+      const article = document.createElement("article");
+      article.className = "milestone";
+
+      const linkHTML = ch.href
+        ? `<a href="${ch.href}" class="chapter-link">Open chapter <span>→</span></a>`
+        : "";
+
+      article.innerHTML = `
+        <div class="milestone-card">
+          <button class="marker" aria-label="Chapter ${ch.n}">${ch.n}</button>
+          <span class="text-[10px] font-black text-springer-yellow uppercase tracking-[0.22em]">Chapter ${ch.n}</span>
+          <h3 class="mt-1 text-lg font-black text-gray-900">${ch.title}</h3>
+          ${linkHTML}
+        </div>
+        <div class="tooltip">${ch.desc}</div>
+      `;
+      return article;
+    }
+
+    function positionMilestones() {
+      if (window.innerWidth <= 768) return;
+
+      road.querySelectorAll(".milestone").forEach(el => el.remove());
+
+      const total = path.getTotalLength();
+      const n = chapters.length;
+
+      const startMargin = 0.06;
+      const endMargin = 0.06;
+      const usable = 1 - startMargin - endMargin;
+
+      chapters.forEach((ch, i) => {
+        const t = startMargin + (i / (n - 1)) * usable;
+        const s = t * total;
+
+        const p = path.getPointAtLength(s);
+        const pPrev = path.getPointAtLength(Math.max(0, s - 1));
+        const pNext = path.getPointAtLength(Math.min(total, s + 1));
+
+        const tx = pNext.x - pPrev.x;
+        const ty = pNext.y - pPrev.y;
+        const norm = Math.hypot(tx, ty) || 1;
+
+        const nx = -ty / norm;
+        const ny = tx / norm;
+
+        const offset = 120;
+        const x = p.x + ch.side * offset * nx;
+        const y = p.y + ch.side * offset * ny;
+
+        const article = makeMilestone(ch);
+        article.style.left = `${(x / 1200) * 100}%`;
+        article.style.top = `${(y / 2400) * 100}%`;
+
+        road.appendChild(article);
+      });
+
+      attachInteractions();
+    }
+
+    function attachInteractions() {
+      const milestones = document.querySelectorAll(".milestone");
+
+      milestones.forEach((item) => {
+        const marker = item.querySelector(".marker");
+        marker.addEventListener("click", (event) => {
+          event.preventDefault();
+          const isActive = item.classList.contains("active");
+          milestones.forEach((m) => m.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedMilestone = event.target.closest(".milestone");
+        if (!clickedMilestone) {
+          document.querySelectorAll(".milestone").forEach((m) => m.classList.remove("active"));
+        }
+      });
+    }
+
+    function renderMobileStack() {
+      if (window.innerWidth > 768) return;
+      road.querySelectorAll(".milestone").forEach(el => el.remove());
+
+      chapters.forEach((ch) => {
+        const article = makeMilestone(ch);
+        road.appendChild(article);
+      });
+
+      attachInteractions();
+    }
+
+    function render() {
+      road.querySelectorAll(".milestone").forEach(el => el.remove());
+      if (window.innerWidth <= 768) {
+        renderMobileStack();
+      } else {
+        positionMilestones();
+      }
+    }
+
+    window.addEventListener("load", render);
+    window.addEventListener("resize", render);
   </script>
 </body>
 </html>
