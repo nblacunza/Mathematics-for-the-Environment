@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: Basic Facts of the Climate Sciences - M4E</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .springer-yellow { background-color: #FFC300; }
+        .text-springer-yellow { color: #FFC300; }
+        .border-springer-yellow { border-color: #FFC300; }
+        .chapter-card { transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease; }
+        .chapter-card:hover { border-color: #FFC300; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .figure-placeholder { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-extrabold text-gray-900 tracking-tight">
+                Mathematics for the <span class="text-springer-yellow">Environment</span>
+            </a>
+            <nav class="flex items-center space-x-6">
+                <a href="julia.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition flex items-center">
+                    <span class="w-2 h-2 rounded-full springer-yellow mr-2"></span>Julia Code
+                </a>
+                <a href="contents.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest font-black">Chapters</a>
+                <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-gray-900 transition uppercase tracking-widest">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow">
+
+        <section class="mb-16">
+            <div class="mb-8 text-left">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Digital Resources</span>
+                <h1 class="text-5xl font-black text-gray-900 mt-2 mb-6 uppercase tracking-tighter leading-none">
+                    Chapter 12: Basic Facts of the Climate Sciences
+                </h1>
+                <div class="h-1.5 w-32 springer-yellow mb-8"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-gray-200 shadow-sm p-8 mb-12">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Framing Note</span>
+                <h2 class="text-2xl font-black text-gray-900 mt-3 mb-4 tracking-tight">What are the climate sciences?</h2>
+                <p class="text-gray-700 leading-relaxed text-lg max-w-5xl">
+                    The climate sciences study the physical, chemical, biological, and mathematical processes that determine the state and evolution of Earth’s climate system. They combine observations, theory, numerical modeling, and data analysis to understand how the atmosphere, ocean, cryosphere, land surface, and biosphere interact across a broad range of spatial and temporal scales.
+                </p>
+            </div>
+
+            <div class="bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 hover:border-springer-yellow transition-all overflow-hidden mb-14 figure-placeholder">
+                <img src="Fig_Ch12_01.png"
+                     alt="Chapter 12 Figure 1"
+                     class="w-full h-auto object-contain">
+            </div>
+
+            <div class="bg-yellow-50 p-8 rounded-3xl border-l-4 border-springer-yellow shadow-sm mb-12">
+                <span class="text-xs font-black text-gray-500 uppercase tracking-widest">Definition</span>
+                <h2 class="text-2xl font-black text-gray-900 mt-3 mb-4 tracking-tight">Climate</h2>
+                <p class="text-gray-700 leading-relaxed text-lg max-w-5xl">
+                    Climate refers to the statistical description of weather over sufficiently long periods of time. It includes averages, variability, extremes, and recurrent patterns in quantities such as temperature, precipitation, wind, humidity, sea level, ocean circulation, and atmospheric composition.
+                </p>
+            </div>
+
+            <div class="bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 hover:border-springer-yellow transition-all overflow-hidden figure-placeholder">
+                <img src="Fig_Ch12_02.png"
+                     alt="Chapter 12 Figure 2"
+                     class="w-full h-auto object-contain">
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="mb-10">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Key Difficulties</span>
+                <h2 class="text-3xl font-black text-gray-900 mt-2 uppercase tracking-tight">Challenges in the Climate Sciences</h2>
+                <p class="text-gray-600 leading-relaxed mt-4 max-w-4xl">
+                    Climate is not a laboratory system that can be repeated at will. Its study requires extracting structure from a single evolving planet, incomplete observations, interacting subsystems, and dynamics that span many scales.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+
+                <div class="chapter-card bg-white rounded-3xl border border-gray-100 shadow-sm p-6 grid grid-cols-1 md:grid-cols-[1fr_260px] gap-6 items-center">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 rounded-2xl springer-yellow flex items-center justify-center text-gray-900 font-black text-lg shrink-0">i</div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-900 tracking-tight">One realization of the process</h3>
+                            <p class="text-gray-600 leading-relaxed mt-2">
+                                We observe only one historical trajectory of Earth’s climate system. Unlike a controlled experiment, the climate record cannot be restarted under identical conditions to generate independent repetitions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border-2 border-dashed border-gray-300 overflow-hidden figure-placeholder flex items-center justify-center min-h-[150px]">
+                        <img src="Fig_Ch12_03.png" alt="One realization of the climate process" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+
+                <div class="chapter-card bg-white rounded-3xl border border-gray-100 shadow-sm p-6 grid grid-cols-1 md:grid-cols-[1fr_260px] gap-6 items-center">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 rounded-2xl springer-yellow flex items-center justify-center text-gray-900 font-black text-lg shrink-0">ii</div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-900 tracking-tight">Observational difficulties</h3>
+                            <p class="text-gray-600 leading-relaxed mt-2">
+                                Climate observations are uneven in space and time, affected by measurement errors, changes in instruments, data gaps, and limited historical coverage.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border-2 border-dashed border-gray-300 overflow-hidden figure-placeholder flex items-center justify-center min-h-[150px]">
+                        <img src="Fig_Ch12_04.png" alt="Observational difficulties" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+
+                <div class="chapter-card bg-white rounded-3xl border border-gray-100 shadow-sm p-6 grid grid-cols-1 md:grid-cols-[1fr_260px] gap-6 items-center">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 rounded-2xl springer-yellow flex items-center justify-center text-gray-900 font-black text-lg shrink-0">iii</div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-900 tracking-tight">Subsystems with very different intrinsic dynamics</h3>
+                            <p class="text-gray-600 leading-relaxed mt-2">
+                                The atmosphere, ocean, cryosphere, biosphere, and land surface each possess their own characteristic mechanisms, memory, feedbacks, and preferred time scales.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border-2 border-dashed border-gray-300 overflow-hidden figure-placeholder flex items-center justify-center min-h-[150px]">
+                        <img src="Fig_Ch12_05.png" alt="Climate subsystems with different dynamics" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+
+                <div class="chapter-card bg-white rounded-3xl border border-gray-100 shadow-sm p-6 grid grid-cols-1 md:grid-cols-[1fr_260px] gap-6 items-center">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 rounded-2xl springer-yellow flex items-center justify-center text-gray-900 font-black text-lg shrink-0">iv</div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-900 tracking-tight">Couplings between subsystems</h3>
+                            <p class="text-gray-600 leading-relaxed mt-2">
+                                Climate dynamics emerge from exchanges of momentum, heat, water, carbon, and energy among subsystems. These couplings generate feedbacks that can amplify, damp, or reorganize variability.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border-2 border-dashed border-gray-300 overflow-hidden figure-placeholder flex items-center justify-center min-h-[150px]">
+                        <img src="Fig_Ch12_06.png" alt="Couplings between climate subsystems" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+
+                <div class="chapter-card bg-white rounded-3xl border border-gray-100 shadow-sm p-6 grid grid-cols-1 md:grid-cols-[1fr_260px] gap-6 items-center">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 rounded-2xl springer-yellow flex items-center justify-center text-gray-900 font-black text-lg shrink-0">v</div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-900 tracking-tight">Many space-time scales, without a clean separation</h3>
+                            <p class="text-gray-600 leading-relaxed mt-2">
+                                Climate variability ranges from turbulent motions to planetary waves and from minutes to millennia. These scales often interact, making it difficult to isolate slow dynamics from fast fluctuations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border-2 border-dashed border-gray-300 overflow-hidden figure-placeholder flex items-center justify-center min-h-[150px]">
+                        <img src="Fig_Ch12_07.png" alt="Multiple space-time scales in the climate system" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="bg-gray-900 rounded-[3rem] p-10 md:p-12 text-white shadow-2xl">
+                <span class="text-xs font-black text-springer-yellow uppercase tracking-widest">Core Concept</span>
+                <h2 class="text-3xl font-black mt-3 mb-5 uppercase tracking-tight">A Forced, Dissipative, and Chaotic System</h2>
+                <p class="text-gray-300 leading-relaxed text-lg max-w-5xl">
+                    The climate system is driven by external and internal forcings, dissipates energy through irreversible processes, and can display chaotic behavior. These three ideas provide a conceptual bridge between physical intuition, dynamical systems theory, and climate modeling.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <div class="bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 hover:border-springer-yellow transition-all overflow-hidden figure-placeholder min-h-[220px]">
+                    <img src="Fig_Ch12_08.png" alt="Forced climate system concept" class="w-full h-auto object-contain">
+                </div>
+                <div class="bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 hover:border-springer-yellow transition-all overflow-hidden figure-placeholder min-h-[220px]">
+                    <img src="Fig_Ch12_09.png" alt="Dissipative climate system concept" class="w-full h-auto object-contain">
+                </div>
+                <div class="bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 hover:border-springer-yellow transition-all overflow-hidden figure-placeholder min-h-[220px]">
+                    <img src="Fig_Ch12_10.png" alt="Chaotic climate system concept" class="w-full h-auto object-contain">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="springer-yellow py-10 text-center text-gray-800 text-sm font-medium">
+        <p>&copy; 2026 Mathematics for the Environment | Published by Springer</p>
+        <p class="mt-4 text-xs opacity-75">
+            For any inquiries, please contact me at:
+            <a href="mailto:nicolas.bodnariuk.lacunza@gmail.com" class="font-bold hover:underline">nicolas.bodnariuk.lacunza@gmail.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
